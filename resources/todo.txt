@@ -11,3 +11,4 @@
 [ ]  L'adapter en responsive design
 [ ]  Apply an alpha badge
 [ ]  Create an about page and link to it from index.html
+[ ]  Implement drag'n'drop re-ordering of items
