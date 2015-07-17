@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My todo list</title>
+  <link rel="shortcut icon" href="resources/favicon.ico"><link/>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:400,600,800,900' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script> <!-- calls jQuery -->
+  <script src="script.js" type="text/javascript"></script> 
+
+  <!-- The line below updates the page everytime I save this html file (LiveReload script) -->
+  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+</head>
+  
+<body>
+  <h2>My Todo List</h2>
+
+  <!-- NEW TASK FORM -->
+  <form name="newTaskForm">
+    <input type="text" onfocus="if(this.value == 'enter new task here') { this.value = ''; }" value="enter new task here" name="newTaskTextInput" id="newTaskTextInput"/>
+    <div id="add">Add</div>
+  </form> 
+
+  <br/>
+  <div class="error-message"></div>
+
+  <div id="todolist">
+    <h3>To do:</h3>
+    <div id="alldone">All Done!</div>
+    <ul class="list"></ul>
+  </div> <!-- todolist -->
+
+  <div id="donelist">
+    <h3>Done:</h3>
+    <div id="undo">Undo All</div>
+    <div id="delete">Delete All</div>
+    <ul class="listdone"></ul>
+  </div> <!-- donelist -->
+</body>
+</html>

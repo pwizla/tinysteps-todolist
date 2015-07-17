@@ -1,0 +1,10 @@
+[x]  Faire en sorte que quand je coche une tâche, elle passe en bas de la liste
+[x]  Et que quand je décoche une tâche, elle remonte en haut
+[x]  Fournir un bouton qui permet d'effacer les tâches cochées
+[x]  Fixer les problèmes de tâches cochées selon qu'on clique sur le texte ou la case
+[x]  Créer un favicon
+[x]  Ajouter un bouton "Check All" pour la "To do" list
+[x]  Ajouter un bouton "Uncheck All" pour remettre tous les éléments de la "Done list" dans la "Todo list"
+[ ]  Remplacer le texte des boutons "Delete All" et "Undo All" par des icônes de poubelle et d'undo (via font-awesome), et diminuer la largeur de ces boutons pour que, à eux deux, ils fassent la même largeur (60px je crois ?) que les boutons "Add" et "Check All"
+[ ]  Détecter l'appui de la touche Enter (keydown code 13) pour faire en sorte que quand j'appuie sur Enter, ça ajoute la tâche
+[ ]  L'adapter en responsive design
