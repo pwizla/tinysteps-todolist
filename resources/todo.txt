@@ -8,7 +8,7 @@
 [ ]  Remplacer le texte des boutons "Delete All" et "Undo All" par des icônes de poubelle et d'undo (via font-awesome), et diminuer la largeur de ces boutons pour que, à eux deux, ils fassent la même largeur (60px je crois ?) que les boutons "Add" et "Check All"
 [ ]  Détecter l'appui de la touche Enter (keydown code 13) pour faire en sorte que quand j'appuie sur Enter, ça ajoute la tâche
 [ ]  Lire la doc sur Jekyll et commencer à mettre en place le blog qui décrit mes premiers pas (tinysteps) en code. Le faire héberger par Github Pages?
-[ ]  L'adapter en responsive design
+[ ]  Adopt a mobile first responsive design approach
 [ ]  Apply an alpha badge
 [ ]  Create an about page and link to it from index.html
 [ ]  Implement drag'n'drop re-ordering of items
