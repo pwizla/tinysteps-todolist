@@ -82,49 +82,34 @@ form {
   background-color: #aa0000;
 }
 
-#delete {
+#alldone, #undo {
   color: #aaaaaa;
-  border-color: #cccccc;
-}
+  border-color: #aaaaaa; 
+  }
 
-#delete:hover {
+#alldone:hover, #undo:hover {
   color: black;
   border-color: black;
 }
 
-#delete:active {
+#alldone:active, #undo:active {
+  color: white;
   background-color: black;
-  color: white;
 }
 
-#alldone {
+#delete {
+  color: #eeb4b4;
+  border-color: #eeb4b4;
+}
+
+#delete:hover {
   color: #cc0000;
-  border-color: #cc0000; 
-  }
-
-#alldone:hover {
-  color: #cccccc;
-  border-color: #cccccc; 
+  border-color: #cc0000;
 }
 
-#alldone:active {
-  color: white;
-  background-color: #cccccc;
-}
-
-#undo {
-  color: black;
-  border-color: black; 
-  }
-
-#undo:hover {
-  color: #cc0000;
-  border-color: #cc0000; 
-}
-
-#undo:active {
-  color: white;
+#delete:active {
   background-color: #cc0000;
+  color: white;
 }
 
 /* === STYLING THE LIST ITEMS === */
