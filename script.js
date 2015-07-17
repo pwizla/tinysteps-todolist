@@ -94,4 +94,10 @@ $(document).ready( function() {
     // removes all items from the "Done" list
     $('.listdone').empty();
   });
+
+  // makes list items sortable with jQuery UI
+  $(document).ready( function () {
+      $('ul').sortable();
+  });
+
 });
