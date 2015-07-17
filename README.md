@@ -12,7 +12,7 @@ So each of the **tinysteps** projects are little web apps that I create for my p
 
 ## What you'll get
 
-![UI screenshot as of 2015, July 17th](https://github.com/pwizla/tinysteps-todolist/blob/master/resources/images/screenshots/UI-screenshot-2015_07_17.png)
+![UI screenshot as of 2015, July 17th](https://github.com/pwizla/tinysteps-todolist/blob/master/resources/images/screenshots/UI-screenshot-2015_07_17-17_50.png)
 
 ## What you WON'T get
 
