@@ -27,3 +27,4 @@ As I said, it's a work in progress. So far, the UI just allows you to add new ta
 * Responsive design
 * Sliding pane with settings (mainly to offer customization features: choosing colors, fonts, hiding the "Done" list…)
 * Ability to store items permanently so that you don't lose your todos when you refresh the page.
+* Drag'n'drop re-ordering of items
