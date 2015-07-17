@@ -1,5 +1,6 @@
 # tinysteps-todolist
 A minimalist, flat-like, work-in-progress todolist web app created by a newbie. 
+Available live here: https://pwizla.github.io/tinysteps-todolist
 
 ## About tinysteps
 
