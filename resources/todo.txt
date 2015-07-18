@@ -12,4 +12,4 @@
 [ ]  Apply an alpha badge
 [ ]  Create an about page and link to it from index.html
 [x]  Implement drag'n'drop re-ordering of items
-[ ]  Make todo items editable (see if I can make the jQuery editable plugin from Victor Jonsson to work; I don't want "ugly" text areas on the DOM
+[ ]  Make todo items editable (see if I can make jEditable plugin to work)
