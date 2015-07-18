@@ -7,9 +7,6 @@ $(document).ready( function() {
       addNewTask();
   });
 
-  // uses the jQuery editable plugin by Victor Jonsson to make list items editable !!! CAN'T GET IT TO WORK AS OF NOW
-  // $('.item').editable();
-
   // === FUNCTION TO HANDLE WHAT HAPPENS WHEN YOU CLICK THE ADD "BUTTON" (which actually is just a div)
   // Basically, when '#add' div is clicked, the function gets the text 
   // typed in the input text box whose name is '#newTaskTextInput' 
@@ -54,6 +51,8 @@ $(document).ready( function() {
       // moves the done item to the 'listdone' div
       $('.listdone').append(this);
   });
+  // the little function below does the opposite
+  // e.g. moving back a "done" item to the "todo" list when clicked
   $(document).on('click', '.itemdone', function() {
       $(this).removeClass('itemdone');
       // moves back the undone item to the 'list' div
