@@ -98,8 +98,6 @@ $(document).ready( function() {
   });
 
   // makes list items sortable with jQuery UI
-  $(document).ready( function () {
       $('ul').sortable();
-  });
 
 });
