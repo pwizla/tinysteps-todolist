@@ -2,6 +2,18 @@ $(document).ready( function() {
   // next line was supposed to give focus to the add button but can't get it to work
   // $('#add').focus();
 
+  // watches for keypress on return key 
+  $(document).keydown( function (key) {
+      switch (parseInt(key.which,10)) {
+          // Enter key pressed
+          case 13:
+              addNewTask();
+          break;
+      }
+  });
+
+  // pressing the return key should activate the 'add' button
+
   //watches for the click event on div '#add'
   $('#add').click( function() { 
       addNewTask();
@@ -38,6 +50,7 @@ $(document).ready( function() {
           // by clicking several times on the '#add' div
           $('input[name=newTaskTextInput]').val(defaultVal); 
         };
+        return false;
     };
     
   // === END OF FUNCTION HANDLING NEW TASKS ===
