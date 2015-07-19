@@ -73,8 +73,9 @@ $(document).ready( function() {
   });
 
   // this function clear all completed tasks 
-  // when the '#clear' div is clicked
+  // when the '#delete' div is clicked
   $(document).on('click', '#delete', function() {
+      confirm("Deleted tasks can't be recovered. Do you really want to DELETE all done tasks?");
     $('.itemdone').hide();
   });
 
