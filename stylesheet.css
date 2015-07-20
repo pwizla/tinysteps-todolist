@@ -119,24 +119,10 @@ form {
   cursor: pointer;
 }
 
-.item:hover {
-  color: #cccccc;
-  text-decoration: line-through;
-  transition: .4s;
-  -webkit-transition: .4s;
-}
-
 .itemdone {
   color: #cccccc;
   text-decoration: line-through;
   cursor: pointer;
-}
-
-.itemdone:hover {
-  color: black;
-  text-decoration: none;
-  transition: .4s;
-  -webkit-transition: .4s;
 }
 
 .error-message {

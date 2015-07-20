@@ -2,6 +2,18 @@ $(document).ready( function() {
   // next line was supposed to give focus to the add button but can't get it to work
   // $('#add').focus();
 
+  // watches for keypress on return key 
+  $(document).keydown( function (key) {
+      switch (parseInt(key.which,10)) {
+          // Enter key pressed
+          case 13:
+              addNewTask();
+          break;
+      }
+  });
+
+  // pressing the return key should activate the 'add' button
+
   //watches for the click event on div '#add'
   $('#add').click( function() { 
       addNewTask();
@@ -38,6 +50,7 @@ $(document).ready( function() {
           // by clicking several times on the '#add' div
           $('input[name=newTaskTextInput]').val(defaultVal); 
         };
+        return false;
     };
     
   // === END OF FUNCTION HANDLING NEW TASKS ===
@@ -51,6 +64,8 @@ $(document).ready( function() {
       // moves the done item to the 'listdone' div
       $('.listdone').append(this);
   });
+  // the little function below does the opposite
+  // e.g. moving back a "done" item to the "todo" list when clicked
   $(document).on('click', '.itemdone', function() {
       $(this).removeClass('itemdone');
       // moves back the undone item to the 'list' div
@@ -58,8 +73,9 @@ $(document).ready( function() {
   });
 
   // this function clear all completed tasks 
-  // when the '#clear' div is clicked
+  // when the '#delete' div is clicked
   $(document).on('click', '#delete', function() {
+      confirm("Deleted tasks can't be recovered. Do you really want to DELETE all done tasks?");
     $('.itemdone').hide();
   });
 
@@ -94,4 +110,8 @@ $(document).ready( function() {
     // removes all items from the "Done" list
     $('.listdone').empty();
   });
+
+  // makes list items sortable with jQuery UI
+      $('ul').sortable();
+
 });

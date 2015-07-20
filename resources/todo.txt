@@ -7,4 +7,9 @@
 [x]  Ajouter un bouton "Uncheck All" pour remettre tous les éléments de la "Done list" dans la "Todo list"
 [ ]  Remplacer le texte des boutons "Delete All" et "Undo All" par des icônes de poubelle et d'undo (via font-awesome), et diminuer la largeur de ces boutons pour que, à eux deux, ils fassent la même largeur (60px je crois ?) que les boutons "Add" et "Check All"
 [ ]  Détecter l'appui de la touche Enter (keydown code 13) pour faire en sorte que quand j'appuie sur Enter, ça ajoute la tâche
-[ ]  L'adapter en responsive design
+[ ]  Lire la doc sur Jekyll et commencer à mettre en place le blog qui décrit mes premiers pas (tinysteps) en code. Le faire héberger par Github Pages?
+[ ]  Adopt a mobile first responsive design approach
+[ ]  Apply an alpha badge
+[ ]  Create an about page and link to it from index.html
+[x]  Implement drag'n'drop re-ordering of items
+[ ]  Make todo items editable (see if I can make jEditable plugin to work)
