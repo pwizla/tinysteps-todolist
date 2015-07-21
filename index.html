@@ -24,9 +24,9 @@
   <h2>My Todo List</h2>
 
   <!-- NEW TASK FORM -->
-  <form name="newTaskForm"> 
+  <form name="newTaskForm" method="POST"> 
     <input type="text" onfocus="if(this.value == 'enter new task here') { this.value = ''; }" value="enter new task here" name="newTaskTextInput" id="newTaskTextInput"/>
-    <div id="add">Add</div>
+    <input type="submit" value="Add" id="add" onsubmit="addNewTask();">
   </form> 
 
   <br/>
