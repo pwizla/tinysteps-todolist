@@ -20,7 +20,7 @@ $(document).ready( function() {
       addNewTask();
   });
 
-  /* === FUNCTION TO HANDLE WHAT HAPPENS WHEN YOU CLICK THE ADD "BUTTON" (which actually is just a div)
+  /* === FUNCTION TO HANDLE WHAT HAPPENS WHEN YOU CLICK THE ADD "BUTTON" 
    Basically, when '#add' div is clicked, the function gets the text 
    typed in the input text box whose name is '#newTaskTextInput' 
    and appends a new "listItem" list entry (li) within the "todoList" div */
