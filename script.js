@@ -17,7 +17,7 @@ $(document).ready( function() {
               addNewTask();
           break;
       }
-  });
+  }); 
 
   // pressing the return key should activate the 'add' button
 
