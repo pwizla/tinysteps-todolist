@@ -19,6 +19,26 @@ h3 {
   border-top: 6px solid #cccccc;
 }
 
+header > h2 {
+}
+
+header > span {
+  margin-left: 25px;
+  color: #aacccc;
+  font-size: 14px;
+}
+
+header > span a {
+  text-decoration: none;
+  color: #cc0000;
+  padding: 2px 5px 2px 5px;
+}
+
+header > span a:hover {
+  color: white;
+  background-color: #cc0000;
+}
+
 #todolist h3 {
   color: #ee0000;
   border-color: #ee0000;
