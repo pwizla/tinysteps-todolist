@@ -2,9 +2,11 @@ $(document).ready( function() {
   // next line was supposed to give focus to the add button but can't get it to work
   // $('#add').focus();
 
-    // Uncomment the following line(s) to print helpful message(s) to the console (useful for DEBUG)
+    // Uncomment the following block to print helpful message(s) to the console (useful for DEBUG)
+/*
     console.log("DEBUT TEST DEBUG");
     console.log("When page is first loaded, text input= " + $('input[name=newTaskTextInput]').val());
+*/
 
   /* will fix this bug:
      "when user hits enter key, the page is reloaded"
