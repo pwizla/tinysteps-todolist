@@ -25,29 +25,33 @@ $(document).ready( function() {
   
     function addNewTask () {
 
-    // Uncomment the following lines to print helpful messages to the console (useful for DEBUG)
+    // Uncomment the following block to print helpful messages to the console (useful for DEBUG)
+/*
        console.log();
        console.log("NOW ENTERING THE addNewTask FUNCTION");
        console.log("input[name=newTaskTextInput] contains the following string '" + $('input[name=newTaskTextInput]').val() + "'");
+*/
 
         //stores text from text input into the itemText variable
         var itemText = $('input[name=newTaskTextInput]').val(); 
         
-        // Uncomment the following lines to print helpful messages to the console (useful for DEBUG)
-           console.log("Text entered in the input box is passed to variable itemText.");
+        // Uncomment the following block to print helpful messages to the console (useful for DEBUG)
+/*         console.log("Text entered in the input box is passed to variable itemText.");
            console.log("Now, itemText variable contains '" + itemText + "'");
+*/
 
         /* condition to detect if the user has not modified the default textinput value 
            (i.e. still displaying 'enter new task here')
-           or if user has clicked (given focus to) text input but not typed text yet */
-        if(itemText == '' || itemText == ' ' || itemText == 'enter new task here') { 
+           or if user has clicked (given focus to) text input but not typed text yet; 
+           ideal case would be to check for any number of white spaces with a regex */
+        if(itemText == '' || itemText == ' ' || itemText == '  ' || itemText == 'enter new task here') { 
         /* prevents from adding a new task if "#add" div is clicked 
            whereas nothing has been typed in the input text box; 
            in this case, there is no subsequent action except displaying an error message 
            that is appended to the ".error-message" class (to control formatting with CSS) */
         
           // Uncomment the following line(s) to print helpful message(s) to the console (useful for DEBUG)
-             console.log("No significant text in input box, so displaying error message");
+//           console.log("No significant text in input box, so displaying error message");
 
           // actually displays the error message
           $('.error-message').append('Please enter a new task before clicking the add button!<br/>'); 
@@ -55,34 +59,38 @@ $(document).ready( function() {
 
         else { // user has actually typed text in the newTaskTextInput field; 
 
-            // Uncomment the following line(s) to print helpful message(s) to the console (useful for DEBUG)
+            // Uncomment the following block to print helpful message to the console (useful for DEBUG)
+/*
             console.log();
             console.log("User has entered text in input box");
             console.log("input[name=newTaskTextInput] contains the following string '" + $('input[name=newTaskTextInput]').val() + "'");
             console.log("Text entered is stored in itemText variable");
             console.log("itemText now contains: ' " + itemText +  "'");
+*/
 
           //appends a new list item, containing the text typed by the user, to the '.list' div
           $('.list').append('<li class="item">   ' + itemText + '</li>'); 
 
-          // Uncomment the following line(s) to print helpful message(s) to the console (useful for DEBUG)
-          console.log("This text from the itemText variable has been added to .list div");
+          // Uncomment the following line to print helpful message(s) to the console (useful for DEBUG)
+//        console.log("This text from the itemText variable has been added to .list div");
 
           // empties the '.error-message' div because a new task was actually created
           $('.error-message').empty(); 
            
-          // Uncomment the following line(s) to print helpful message(s) to the console (useful for DEBUG)
-             console.log("The .error-message class content has been emptied");
+          // Uncomment the following line to print helpful message(s) to the console (useful for DEBUG)
+ //          console.log("The .error-message class content has been emptied");
 
           // clears the input text box; 
           $('input[name=newTaskTextInput]').val(''); 
 
-          // Uncomment the following line(s) to print helpful message(s) to the console (useful for DEBUG)
+          // Uncomment the following block to print helpful message to the console (useful for DEBUG)
+/*
              console.log("We're at end of the addNewTask function, and itemText variable = " + itemText);
              console.log("And input[name=newTaskTextInput] contains '" + $('input[name=newTaskTextInput]').val() + "'");
+*/
 
         };
-        return false;
+        return false; // makes sure pressing Enter will not reload the page
     };
     
   /* === END OF FUNCTION HANDLING NEW TASKS ===
