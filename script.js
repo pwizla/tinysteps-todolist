@@ -1,6 +1,6 @@
 $(document).ready( function() {
-  // next line was supposed to give focus to the add button but can't get it to work
-  // $('#add').focus();
+  // gives focus to input text box as soon document is ready
+  $('#newTaskTextInput').focus();
 
     // Uncomment the following block to print helpful message(s) to the console (useful for DEBUG)
 /*
