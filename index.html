@@ -25,7 +25,7 @@
 
   <!-- NEW TASK FORM -->
   <form name="newTaskForm">
-    <input type="text" onfocus="if(this.value == 'enter new task here') { this.value = ''; }" value="enter new task here" name="newTaskTextInput" id="newTaskTextInput"/>
+    <input type="text" onfocus="if(this.value == 'enter new task here') { this.value = ''; }" value="enter new task here" name="newTaskTextInput" id="newTaskTextInput" onsubmit="addNewTask();"/>
     <div id="add">Add</div>
   </form> 
 
