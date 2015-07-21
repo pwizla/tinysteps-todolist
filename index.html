@@ -19,14 +19,19 @@
 </head>
   
 <body>
-  <h2>My Todo List</h2>
-  <p class="info">by <a href="http://twitter.com/pwizla">pwizla</a>  <a target="_blank" href="https://github.com/pwizla/tinysteps-todolist/blob/gh-pages/README.md">README</a></p>
+  <header>
+    <h2>My Todo List</h2>
+    <!-- <span>by <a href="http://twitter.com/pwizla">pwizla</a></span> -->
+    <!-- <span><b><a target="_blank" href="https://github.com/pwizla/tinysteps-todolist/blob/gh-pages/README.md">README</a></b></span> -->
+  </header>
 
   <!-- NEW TASK FORM -->
-  <form name="newTaskForm" method="POST"> 
-    <input type="text" value="enter new task here" onfocus="if(this.value == 'enter new task here') { this.value = ''; }" name="newTaskTextInput" id="newTaskTextInput"/>
-    <input type="submit" value="Add" id="add" onsubmit="addNewTask();">
-  </form> 
+  <div class="form">
+    <form name="newTaskForm" method="POST"> 
+      <input type="text" value="enter new task here" onfocus="if(this.value == 'enter new task here') { this.value = ''; }" name="newTaskTextInput" id="newTaskTextInput"/>
+      <input type="submit" value="Add" id="add" onsubmit="addNewTask();">
+    </form> 
+  </div>
 
   <br/>
   <div class="error-message"></div>
