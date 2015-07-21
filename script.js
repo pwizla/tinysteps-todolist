@@ -1,8 +1,35 @@
+    // stores content (html, including li tags) of the "To do" list
+    var $list = $('.list').html();
+    // stores content (html, including li tags) of the "Done" list
+    var $listdone = $('.listdone').html();
+
 $(document).ready( function() {
+
+    var $list = localStorage.getItem('todolist');
+    var $listdone = localStorage.getItem('donelist');
+    console.log("after localStorage call, $list is:", $list);
+    console.log("after localStorage recall, $listdone is", $listdone);
+
+    // displays the content of "To do" and "Done" lists as recalled from LocalStorage
+    $('.list').val($list);
+    $('.listdone').val($listdone);
+    if ( $list == undefined) { 
+        // do nothing 
+        }
+    else { 
+        document.querySelector('.list').innerHTML = $list;
+    }
+
+    if ( $listdone == undefined) {
+        // do nothing
+    } else {
+        document.querySelector('.listdone').innerHTML = $listdone;
+    }
+
   // gives focus to input text box as soon document is ready
   $('#newTaskTextInput').focus();
 
-    // Uncomment the following block to print helpful message(s) to the console (useful for DEBUG)
+  // Uncomment the following block to print helpful message(s) to the console (useful for DEBUG)
 /*
     console.log("DEBUT TEST DEBUG");
     console.log("When page is first loaded, text input= " + $('input[name=newTaskTextInput]').val());
@@ -93,6 +120,12 @@ $(document).ready( function() {
 */
 
         };
+
+        // reflect changes to $list and $listdone and saves them to LocalStorage
+        updateTodoList();
+        updateDoneList();
+        saveToLocalStorage();
+
         return false; // makes sure pressing Enter will not reload the page
     };
     
@@ -108,6 +141,10 @@ $(document).ready( function() {
       $(this).toggleClass('itemdone');
       // moves the done item to the 'listdone' div
       $('.listdone').append(this);
+      // reflects changes to $list and $listdone
+      updateTodoList();
+      updateDoneList();
+      saveToLocalStorage();
   });
   
 
@@ -118,6 +155,10 @@ $(document).ready( function() {
       $(this).removeClass('itemdone');
       // moves back the undone item to the 'list' div
       $('.list').append(this);
+      // reflects changes to $list and $listdone
+      updateTodoList();
+      updateDoneList();
+      saveToLocalStorage();
   });
 
 
@@ -125,8 +166,21 @@ $(document).ready( function() {
   /* The little function below clears all completed tasks 
      when the '#delete' div is clicked */
   $(document).on('click', '#delete', function() {
-      confirm("Deleted tasks can't be recovered. Do you really want to DELETE all done tasks?");
-    $('.itemdone').hide();
+
+      // makes sure $listdone is properly set
+      updateDoneList();
+      /* warns the user of irreversible changes
+         and stores user's answer to dialog;
+         such as clicking OK returns true
+         and clicking Cancel returns false */
+      var deleteConfirm = confirm("Deleted tasks can't be recovered.\nDo you really want to DELETE all done tasks?");
+      if (deleteConfirm == true) {
+            $('.listdone').empty();
+            // reflects changes to $listdone
+            updateDoneList();
+            saveToLocalStorage();
+      } else { // do nothing 
+      }
   });
 
 
@@ -134,19 +188,23 @@ $(document).ready( function() {
   /* This function marks all tasks from the "To do" list
      as completed, which moves them to the "Done" list */
   $(document).on('click', '#alldone', function() {
-    // stores content (html, including li tags) of the "To do" list
-    var $list = $('.list').html();
-    
-    // un-comment the line below to print $list to the console for debugging
-    // console.log('The $list variable contains: ',$list);
 
+    // makes sure $list is properly set
+    updateTodoList();
     // appends all the items included in the $list var to the "Done list"
     $('.listdone').append($list); 
+    // reflects changes to $listdone content
+    updateDoneList();  
+    updateTodoList();
     /* adds class '.itemdone' to all these items 
        newly added to the "Done list" */
     $('.item').addClass('itemdone'); 
     // removes all items from the "Todo list"
     $('.list').empty();
+    // reflects changes to $list content
+    updateTodoList();
+    updateDoneList();
+    saveToLocalStorage();
   });
 
 
@@ -154,22 +212,67 @@ $(document).ready( function() {
   /* This function "unchecks" all tasks from the "Done" list
      and moves them back to the "To do" list */
   $(document).on('click', '#undo', function() {
-    // stores content (html, including li tags) of the "Done" list
-    var $listdone = $('.listdone').html();
 
-    // un-comment the line below to print $list to the console for debugging
-    // console.log('The $listdone variable contains: ',$listdone);
-    
+    // makes sure $listdone is properly set
+    updateDoneList();
     // appends all the items included in the $listdone var to the "To do" list
     $('.list').append($listdone); 
     /* removes class '.itemdone' from all these items 
        newly added to the "To do" list */
     $('.itemdone').removeClass('itemdone'); 
+    // reflects changes to $list content
+    updateTodoList();
     // removes all items from the "Done" list
     $('.listdone').empty();
+    // reflects changes to $listdone content
+    updateDoneList();
+    saveToLocalStorage();
   });
 
   // makes list items sortable with jQuery UI
-      $('ul').sortable();
+      $('ul').sortable({
+          /* reflects changes to $list and $listdone
+             when dragging is finished, as explained in
+             http://stackoverflow.com/a/26192283/5139147
+             except that I don't need "start:" here
+             or it would trigger two updates,
+             one of them being useless.
+             I choose to update the lists when items are dragged
+             so that the result of re-ordering is saved in the variables.
+             It will be useful for localStorage retrieval. */
+          update: function() {
+                      updateTodoList();
+                      updateDoneList();
+                      saveToLocalStorage();
+                  },
+      });
+
+
+
+    function updateTodoList () { // updates the $list global variable
+        $list = $('.list').html();
+        // prints out the complete $list if needed (uncomment for debugging sessions)
+        console.log("$list is: ",$list);
+    };
+
+
+
+    function updateDoneList () { // updates the $listdone global variable
+        $listdone = $('.listdone').html();
+        // prints out the complete $listdone if needed (uncomment for debugging sessions)
+        console.log("$listdone is: ",$listdone);
+    };
+
+
+
+    function saveToLocalStorage() {
+        localStorage.setItem ('todolist', $list);
+        // prints out localStorage for todolist
+        console.log("localStorage item 'todolist' is:",localStorage.getItem ('todolist'));
+
+        localStorage.setItem ('donelist', $listdone);
+        // prints out localStorage for donelist
+        console.log("localStorage item 'donelist' is:",localStorage.getItem ('donelist'));
+    };
 
 });
