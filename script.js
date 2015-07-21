@@ -1,4 +1,22 @@
 $(document).ready( function() {
+
+    // stores content (html, including li tags) of the "To do" list
+    var $list = $('.list').html();
+    // stores content (html, including li tags) of the "Done" list
+    var $listdone = $('.listdone').html();
+
+    function updateTodoList () { // updates the $list global variable
+        $list = $('.list').html();
+        // prints out the complete $list if needed (uncomment for debugging sessions)
+        console.log("$list is: ",$list);
+    };
+
+    function updateDoneList () { // updates the $listdone global variable
+        $listdone = $('.listdone').html();
+        // prints out the complete $listdone if needed (uncomment for debugging sessions)
+        console.log("$listdone is: ",$listdone);
+    };
+
   // gives focus to input text box as soon document is ready
   $('#newTaskTextInput').focus();
 
@@ -93,6 +111,10 @@ $(document).ready( function() {
 */
 
         };
+
+        // reflect changes to $list 
+        updateTodoList();
+
         return false; // makes sure pressing Enter will not reload the page
     };
     
@@ -108,6 +130,9 @@ $(document).ready( function() {
       $(this).toggleClass('itemdone');
       // moves the done item to the 'listdone' div
       $('.listdone').append(this);
+      // reflects changes to $list and $listdone
+      updateTodoList();
+      updateDoneList();
   });
   
 
@@ -118,6 +143,9 @@ $(document).ready( function() {
       $(this).removeClass('itemdone');
       // moves back the undone item to the 'list' div
       $('.list').append(this);
+      // reflects changes to $list and $listdone
+      updateTodoList();
+      updateDoneList();
   });
 
 
@@ -125,8 +153,14 @@ $(document).ready( function() {
   /* The little function below clears all completed tasks 
      when the '#delete' div is clicked */
   $(document).on('click', '#delete', function() {
+
+      // makes sure $listdone is properly set
+      updateDoneList();
+      // warns the user of irreversible changes
       confirm("Deleted tasks can't be recovered. Do you really want to DELETE all done tasks?");
-    $('.itemdone').hide();
+    $('.listdone').empty();
+    // reflects changes to $listdone
+    updateDoneList();
   });
 
 
@@ -134,19 +168,20 @@ $(document).ready( function() {
   /* This function marks all tasks from the "To do" list
      as completed, which moves them to the "Done" list */
   $(document).on('click', '#alldone', function() {
-    // stores content (html, including li tags) of the "To do" list
-    var $list = $('.list').html();
-    
-    // un-comment the line below to print $list to the console for debugging
-    // console.log('The $list variable contains: ',$list);
 
+    // makes sure $list is properly set
+    updateTodoList();
     // appends all the items included in the $list var to the "Done list"
     $('.listdone').append($list); 
+    // reflects changes to $listdone content
+    updateDoneList();  
     /* adds class '.itemdone' to all these items 
        newly added to the "Done list" */
     $('.item').addClass('itemdone'); 
     // removes all items from the "Todo list"
     $('.list').empty();
+    // reflects changes to $list content
+    updateTodoList();
   });
 
 
@@ -154,22 +189,37 @@ $(document).ready( function() {
   /* This function "unchecks" all tasks from the "Done" list
      and moves them back to the "To do" list */
   $(document).on('click', '#undo', function() {
-    // stores content (html, including li tags) of the "Done" list
-    var $listdone = $('.listdone').html();
 
-    // un-comment the line below to print $list to the console for debugging
-    // console.log('The $listdone variable contains: ',$listdone);
-    
+    // makes sure $listdone is properly set
+    updateDoneList();
     // appends all the items included in the $listdone var to the "To do" list
     $('.list').append($listdone); 
     /* removes class '.itemdone' from all these items 
        newly added to the "To do" list */
     $('.itemdone').removeClass('itemdone'); 
+    // reflects changes to $list content
+    updateTodoList();
     // removes all items from the "Done" list
     $('.listdone').empty();
+    // reflects changes to $listdone content
+    updateDoneList();
   });
 
   // makes list items sortable with jQuery UI
-      $('ul').sortable();
+      $('ul').sortable({
+          /* reflects changes to $list and $listdone
+             when dragging is finished, as explained in
+             http://stackoverflow.com/a/26192283/5139147
+             except that I don't need "start:" here
+             or it would trigger two updates,
+             one of them being useless.
+             I choose to update the lists when items are dragged
+             so that the result of re-ordering is saved in the variables.
+             It will be useful for localStorage retrieval. */
+          update: function(event, ui) {
+                      updateTodoList();
+                      updateDoneList();
+                  },
+      });
 
 });
