@@ -30,9 +30,6 @@ $(document).ready( function() {
        console.log("NOW ENTERING THE addNewTask FUNCTION");
        console.log("input[name=newTaskTextInput] contains the following string '" + $('input[name=newTaskTextInput]').val() + "'");
 
-         // declares a new variable used at the end of this function
-        var defaultVal = 'enter new task here'; 
-        
         //stores text from text input into the itemText variable
         var itemText = $('input[name=newTaskTextInput]').val(); 
         
@@ -43,7 +40,7 @@ $(document).ready( function() {
         /* condition to detect if the user has not modified the default textinput value 
            (i.e. still displaying 'enter new task here')
            or if user has clicked (given focus to) text input but not typed text yet */
-        if(itemText == defaultVal || itemText == '' || itemText == ' ' || itemText == 'enter new task here') { 
+        if(itemText == '' || itemText == ' ' || itemText == 'enter new task here') { 
         /* prevents from adding a new task if "#add" div is clicked 
            whereas nothing has been typed in the input text box; 
            in this case, there is no subsequent action except displaying an error message 
@@ -77,10 +74,8 @@ $(document).ready( function() {
           // Uncomment the following line(s) to print helpful message(s) to the console (useful for DEBUG)
              console.log("The .error-message class content has been emptied");
 
-          /* restores default value of input text box; 
-             mainly implemented to prevent the user from inadvertently adding the same task again 
-             by clicking several times on the '#add' div */
-          $('input[name=newTaskTextInput]').val(defaultVal); 
+          // clears the input text box; 
+          $('input[name=newTaskTextInput]').val(''); 
 
           // Uncomment the following line(s) to print helpful message(s) to the console (useful for DEBUG)
              console.log("We're at end of the addNewTask function, and itemText variable = " + itemText);
