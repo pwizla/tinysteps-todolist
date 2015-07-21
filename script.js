@@ -22,7 +22,7 @@ $(document).ready( function() {
   // pressing the return key should activate the 'add' button
 
   //watches for the click event on div '#add'
-  $('submit').click( function() { 
+  $('#add').click( function() { 
       addNewTask();
   });
 
