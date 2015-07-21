@@ -2,7 +2,7 @@ $(document).ready( function() {
   // next line was supposed to give focus to the add button but can't get it to work
   // $('#add').focus();
 
-  // trying to solve this bug:
+  // will fix this bug:
   // "when user hits enter key, the page is reloaded"
   // with the help of http://stackoverflow.com/a/15488912
   $('form').on('submit', function(event) {
