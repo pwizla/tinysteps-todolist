@@ -36,7 +36,8 @@ $(document).ready( function() {
         var itemText = $('input[name=newTaskTextInput]').val(); 
         
         // Uncomment the following block to print helpful messages to the console (useful for DEBUG)
-/*         console.log("Text entered in the input box is passed to variable itemText.");
+/*
+           console.log("Text entered in the input box is passed to variable itemText.");
            console.log("Now, itemText variable contains '" + itemText + "'");
 */
 
@@ -93,9 +94,11 @@ $(document).ready( function() {
         return false; // makes sure pressing Enter will not reload the page
     };
     
-  /* === END OF FUNCTION HANDLING NEW TASKS ===
+  // === END OF FUNCTION HANDLING NEW TASKS ===
 
-     little function that toggles 'itemdone' class 
+
+
+  /* The little function below toggles 'itemdone' class 
      on items (from the '.list') that are clicked
      so that the item is greyed out and formatted as strikethrough;
      it also moves the item to the '.listdone' div */
@@ -104,7 +107,10 @@ $(document).ready( function() {
       // moves the done item to the 'listdone' div
       $('.listdone').append(this);
   });
-  /* the little function below does the opposite
+  
+
+
+  /* The little function below does the opposite
      e.g. moving back a "done" item to the "todo" list when clicked */
   $(document).on('click', '.itemdone', function() {
       $(this).removeClass('itemdone');
@@ -112,20 +118,26 @@ $(document).ready( function() {
       $('.list').append(this);
   });
 
-  /* this function clear all completed tasks 
+
+
+  /* The little function below clears all completed tasks 
      when the '#delete' div is clicked */
   $(document).on('click', '#delete', function() {
       confirm("Deleted tasks can't be recovered. Do you really want to DELETE all done tasks?");
     $('.itemdone').hide();
   });
 
-  /* this function marks all tasks from the "To do" list
+
+
+  /* This function marks all tasks from the "To do" list
      as completed, which moves them to the "Done" list */
   $(document).on('click', '#alldone', function() {
     // stores content (html, including li tags) of the "To do" list
     var $list = $('.list').html();
+    
     // un-comment the line below to print $list to the console for debugging
     // console.log('The $list variable contains: ',$list);
+
     // appends all the items included in the $list var to the "Done list"
     $('.listdone').append($list); 
     /* adds class '.itemdone' to all these items 
@@ -135,11 +147,14 @@ $(document).ready( function() {
     $('.list').empty();
   });
 
-  /* this function unchecks all tasks from the "Done" list
+
+
+  /* This function "unchecks" all tasks from the "Done" list
      and moves them back to the "To do" list */
   $(document).on('click', '#undo', function() {
     // stores content (html, including li tags) of the "Done" list
     var $listdone = $('.listdone').html();
+
     // un-comment the line below to print $list to the console for debugging
     // console.log('The $listdone variable contains: ',$listdone);
     
