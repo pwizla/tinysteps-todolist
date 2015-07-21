@@ -2,6 +2,10 @@ $(document).ready( function() {
   // next line was supposed to give focus to the add button but can't get it to work
   // $('#add').focus();
 
+    // DEBUG
+    console.log("DEBUT TEST DEBUG");
+    console.log("When page is first loaded, text input= " + $('input[name=newTaskTextInput]').val());
+
   /* will fix this bug:
      "when user hits enter key, the page is reloaded"
      with the help of http://stackoverflow.com/a/15488912 */
@@ -32,10 +36,13 @@ $(document).ready( function() {
    and appends a new "listItem" list entry (li) within the "todoList" div */
   
     function addNewTask () {
-         // initializes the default text value of input text box to 'enter new task here'
+         // declares a new variable used at the end of this function
         var defaultVal = 'enter new task here'; 
         //stores text from text input into the itemText variable
         var itemText = $('input[name=newTaskTextInput]').val(); 
+        
+        // DEBUG
+           console.log("At beginning of function, itemText = " + itemText);
 
         /* condition to detect if the user has not modified the default textinput value 
            (i.e. still displaying 'enter new task here')
@@ -45,17 +52,34 @@ $(document).ready( function() {
            whereas nothing has been typed in the input text box; 
            in this case, there is no subsequent action except displaying an error message 
            that is appended to the ".error-message" class (to control formatting with CSS) */
+          // DEBUG
+             console.log("no significant text in input box, so error message");
+
           $('.error-message').append('Please enter a new task before clicking the add button!<br/>'); 
         } 
         else { // user has actually typed text in the newTaskTextInput field; 
           //appends a new list item containing the text typed by the user, to the '.list' div
+            // DEBUG
+            console.log("User has entered text in input box");
+            console.log("Text entered is stored in itemText variable");
+            console.log("itemText now contains: ' " + itemText +  "'");
+
           $('.list').append('<li class="item">   ' + itemText + '</li>'); 
+
+          // DEBUG
+          console.log("last itemText has been added to .list div");
+
           // empties the '.error-message' div because a new task was actually created
           $('.error-message').empty(); 
+           
           /* restores default value of input text box 
              mainly implemented to prevent the user from inadvertently adding the same task again 
              by clicking several times on the '#add' div */
           $('input[name=newTaskTextInput]').val(defaultVal); 
+
+          // DEBUG
+          console.log("We're at end of the addNewTask function, and itemText variable = " + itemText);
+
         };
         return false;
     };
