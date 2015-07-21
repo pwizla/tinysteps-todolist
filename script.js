@@ -2,7 +2,7 @@ $(document).ready( function() {
   // gives focus to input text box as soon document is ready
   $('#newTaskTextInput').focus();
 
-    // Uncomment the following block to print helpful message(s) to the console (useful for DEBUG)
+  // Uncomment the following block to print helpful message(s) to the console (useful for DEBUG)
 /*
     console.log("DEBUT TEST DEBUG");
     console.log("When page is first loaded, text input= " + $('input[name=newTaskTextInput]').val());
