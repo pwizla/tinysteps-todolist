@@ -13,20 +13,6 @@ $(document).ready( function() {
       event.preventDefault();
   });
 
-  /* commenting these lines for debugging purposes
-  // watches for keypress on return key 
-  $(document).keydown( function (key) {
-      switch (parseInt(key.which,10)) {
-          // Enter key pressed
-          case 13:
-          // pressing the return key should activate the 'add' button
-              addNewTask();
-          break;
-      }
-  }); 
-  */
-
-
   //watches for the click event on div '#add'
   $('#add').click( function() { 
       addNewTask();
