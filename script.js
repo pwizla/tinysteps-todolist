@@ -13,6 +13,7 @@ $(document).ready( function() {
       event.preventDefault();
   });
 
+  /* commenting these lines for debugging purposes
   // watches for keypress on return key 
   $(document).keydown( function (key) {
       switch (parseInt(key.which,10)) {
@@ -23,6 +24,7 @@ $(document).ready( function() {
           break;
       }
   }); 
+  */
 
 
   //watches for the click event on div '#add'
