@@ -156,11 +156,17 @@ $(document).ready( function() {
 
       // makes sure $listdone is properly set
       updateDoneList();
-      // warns the user of irreversible changes
-      confirm("Deleted tasks can't be recovered. Do you really want to DELETE all done tasks?");
-    $('.listdone').empty();
-    // reflects changes to $listdone
-    updateDoneList();
+      /* warns the user of irreversible changes
+         and stores user's answer to dialog;
+         such as clicking OK returns true
+         and clicking Cancel returns false */
+      var deleteConfirm = confirm("Deleted tasks can't be recovered.\nDo you really want to DELETE all done tasks?");
+      if (deleteConfirm == true) {
+            $('.listdone').empty();
+            // reflects changes to $listdone
+            updateDoneList();
+      } else { // do nothing 
+      }
   });
 
 
