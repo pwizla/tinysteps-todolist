@@ -20,7 +20,7 @@ So each of the **tinysteps** projects are little web apps that I (will) create f
 **Consider this as alpha — or even pre-alpha — stuff!**
 As I said, it's a work in progress. So far, the UI just allows you to add and re-order tasks, check/uncheck them, and that's all. It just moves things up and down in the DOM. 
 
-**BEWARE! Nothing is saved!** If you reload the page, you'll lose everything. Storing items in a database or JSON file is planned, but not implemented yet.
+**BEWARE! Nothing is saved!** If you reload the page, you'll lose everything. Storing items (HTML5 storage maybe) is planned, but not implemented yet.
 
 ## What's planned for future versions
 
