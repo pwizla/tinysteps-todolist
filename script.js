@@ -32,23 +32,23 @@ $(document).ready( function() {
    and appends a new "listItem" list entry (li) within the "todoList" div */
   
     function addNewTask () {
-        // initializes the default text value of input text box to 'enter new task here'
+         // initializes the default text value of input text box to 'enter new task here'
         var defaultVal = 'enter new task here'; 
         //stores text from text input into the itemText variable
         var itemText = $('input[name=newTaskTextInput]').val(); 
 
-        // condition to detect if the user has not modified the default textinput value 
-        /* (i.e. still displaying 'enter new task here')
+        /* condition to detect if the user has not modified the default textinput value 
+           (i.e. still displaying 'enter new task here')
            or if user has clicked (given focus to) text input but not typed text yet */
-        if(itemText == defaultVal || itemText == '' || itemText == ' ') { 
+        if(itemText == defaultVal || itemText == '' || itemText == ' ' || itemText == 'enter new task here') { 
         /* prevents from adding a new task if "#add" div is clicked 
            whereas nothing has been typed in the input text box; 
            in this case, there is no subsequent action except displaying an error message 
            that is appended to the ".error-message" class (to control formatting with CSS) */
           $('.error-message').append('Please enter a new task before clicking the add button!<br/>'); 
         } 
-        else { // user has actually typed text in the newTaskTextInput field; a space would be accepted, though…
-          //appends a new list item, consisting of a checkbox followed by the text typed by the user, to the '.list' div
+        else { // user has actually typed text in the newTaskTextInput field; 
+          //appends a new list item containing the text typed by the user, to the '.list' div
           $('.list').append('<li class="item">   ' + itemText + '</li>'); 
           // empties the '.error-message' div because a new task was actually created
           $('.error-message').empty(); 
