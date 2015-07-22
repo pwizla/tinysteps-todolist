@@ -19,6 +19,7 @@
 </head>
   
 <body>
+  <main class="cd-main-content">
   <!-- header & span structure suggested by http://stackoverflow.com/a/13194762/5139147 -->
   <header>
     <h2>My Todo List</h2>
@@ -49,5 +50,17 @@
     <div id="delete">Delete All</div>
     <ul class="listdone"></ul>
   </div> <!-- donelist -->
+  <button id="togglePanel">Panel</button>
+  
+  </main>
+
+  <div id="rightpanel" class="slidepanel">
+    <header>
+      <h3>Settings</h3>
+    </header>
+    <div id="rightpanel-content">
+      <button id="hideDone">Hide Done</button>
+    </div> <!-- rightpanel-content -->
+  </div> <!-- rightpanel -->
 </body>
 </html>

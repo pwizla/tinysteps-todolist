@@ -19,26 +19,6 @@ h3 {
   border-top: 6px solid #999999;
 }
 
-header > h2 {
-}
-
-header > span {
-  margin-left: 25px;
-  color: #aacccc;
-  font-size: 14px;
-}
-
-header > span a {
-  text-decoration: none;
-  color: #cc0000;
-  padding: 2px 5px 2px 5px;
-}
-
-header > span a:hover {
-  color: white;
-  background-color: #cc0000;
-}
-
 #todolist h3 {
   color: #ee0000;
   border-color: #ee0000;
@@ -159,4 +139,50 @@ form {
 
 ul {
   width: 310px;
+}
+
+/* === RIGHT PANEL === */
+
+main {
+}
+
+.slidepanel {
+  box-shadow: -5px 0px 5px 0px #d1d1d1; /* position x, position y, blur, spread, color */
+  background-color: white;
+  display: none;
+}
+
+#rightpanel {
+  position: fixed;
+  height: 100%;
+  width: 300px;
+  right: 0;
+  top: 0;
+  padding-top: 20px;
+}
+
+#rightpanel header {
+  position: fixed;
+  top: 0;
+  height: 100px;
+}
+
+#rightpanel header h3 {
+  padding-left: 20px;
+  padding-top: 40px;
+  color: black;
+  border-top: none;
+  margin-top: 0;
+}
+
+#rightpanel-content {
+  margin-top: 100px;
+  padding-left: 20px;
+}
+
+.switch {
+  position: relative;
+}
+
+.switch-knob {
 }

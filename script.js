@@ -275,4 +275,17 @@ $(document).ready( function() {
         console.log("localStorage item 'donelist' is:",localStorage.getItem ('donelist'));
     };
 
+    /* Clicking the "Hide Done" button toggles display 
+       for Done list and changes button text accordingly */
+    $('#hideDone').click( function() {
+      $('#donelist').toggle();
+      // sets the text button based on a test
+      $(this).text( ($(this).text() == 'Hide Done' ? 'Show Done' : 'Hide Done'));
+    });
+
+    // Clicking the "Panel" button (#togglePanel) toggles right panel visibility
+    $('#togglePanel').click( function() {
+      $('#rightpanel').toggle('slide', { direction: 'right'}, 200);
+    });
+
 });
