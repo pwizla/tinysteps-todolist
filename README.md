@@ -17,8 +17,6 @@ So each of the **tinysteps** projects are little web apps that I (will) create f
 
 ## What you can do
 
-As of now, you can:
-
 * Add new tasks by pressing the enter key (the input text box is focused by default as soon as page is loaded)
 * Add new tasks by clicking on the "Add" button 
 * Re-order tasks by drag'n'drop
@@ -28,15 +26,9 @@ As of now, you can:
 * Uncheck all done tasks (moving them back to the "To Do" list all at once) by clicking on the "Undo All" button
 * Delete all done tasks by clicking on the "Delete All" button
 
-## Known bugs
-
-* Items are not saved: each page reload deletes all items!
-* The alert dialog box related to the "Delete All" button deletes all tasks, whatever option (Cancel or OK) you choose.
-* The alert dialog box warns that all tasks will be deleted, *even if there are none to delete.*
-* **FIXED in v0.2.0-alpha** ~~Pressing Enter reloads the page~~
-
+Task lists are saved locally on your machine. See [LocalStorage support details](https://github.com/pwizla/tinysteps-todolist/releases/tag/v0.3.0).
 
 ## What's planned for future versions
 
-* Responsive design
+* Responsive design (so far the list width is a bit narrow, by design)
 * Sliding pane with settings (mainly to offer customization features: choosing colors, fonts, hiding the "Done" list…)
