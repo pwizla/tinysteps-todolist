@@ -173,7 +173,7 @@ $(document).ready( function() {
          and stores user's answer to dialog;
          such as clicking OK returns true
          and clicking Cancel returns false */
-      var deleteConfirm = confirm("Deleted tasks can't be recovered.\nDo you really want to DELETE all done tasks?");
+      var deleteConfirm = confirm("Deleted tasks can't be recovered.\n\nYou are going to DELETE all done tasks.");
       if (deleteConfirm == true) {
             $('.listdone').empty();
             // reflects changes to $listdone
