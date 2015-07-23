@@ -148,9 +148,9 @@ ul {
  */
 
 .slidepanel {
-    box-shadow: -5px 0px 5px 0px #d1d1d1; /* position x, position y, blur, spread, color */
-    background-color: white;
-    display: none; 
+  box-shadow: -5px 0px 5px 0px #d1d1d1; /* position x, position y, blur, spread, color */
+  background-color: white;
+  display: none; 
 }
 
 #rightpanel {
