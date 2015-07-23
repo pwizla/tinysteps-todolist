@@ -54,13 +54,25 @@
   
   </main>
 
-  <div id="rightpanel" class="slidepanel">
+  <!-- Panel sliding from the right of the page and containing settings -->
+  <div id=rightpanel" class="slidepanel">
     <header>
       <h3>Settings</h3>
     </header>
+    
     <div id="rightpanel-content">
-      <button id="hideDone">Hide Done</button>
+
+      <section id="show-done-section">
+      <!-- The checkbox stylized part was taken from http://www.paulund.co.uk/style-checkboxes-with-css -->
+        <div class="checkboxStylized">
+          <input type="checkbox" value="1" id="checkboxStylizedInput" name="" />
+          <label for="checkboxStylizedInput"></label>
+        </div> <!-- checkboxStylized -->
+          <div class="option-name">Show Done</div>
+      </section> <!-- show-done-section -->
+      
     </div> <!-- rightpanel-content -->
+    
   </div> <!-- rightpanel -->
 </body>
 </html>
