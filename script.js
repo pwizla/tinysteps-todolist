@@ -277,10 +277,10 @@ $(document).ready( function() {
 
     /* Clicking the "Hide Done" button toggles display 
        for Done list and changes button text accordingly */
-    $('#hideDone').click( function() {
+    $('#checkboxStylizedInput').change( function() {
       $('#donelist').toggle();
       // sets the text button based on a test
-      $(this).text( ($(this).text() == 'Hide Done' ? 'Show Done' : 'Hide Done'));
+      // $(this).text( ($(this).text() == 'Hide Done' ? 'Show Done' : 'Hide Done'));
     });
 
     // Clicking the "Panel" button (#togglePanel) toggles right panel visibility
