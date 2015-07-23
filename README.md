@@ -34,4 +34,4 @@ Task lists are saved locally on your machine. See [LocalStorage support details]
 
 ## What's planned for future versions
 
-You might want to check the wiki for a [product roadmap](https://github.com/pwizla/tinysteps-todolist/wiki)
+You might want to check the wiki for a [product roadmap](https://github.com/pwizla/tinysteps-todolist/wiki).
