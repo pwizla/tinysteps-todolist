@@ -4,7 +4,7 @@ body {
   text-decoration: none;
 }
 
-h2 {
+h1 {
   font-family: Raleway;
   font-weight: 900;
   font-size: 36px;
@@ -16,10 +16,10 @@ h3 {
   width: 345px;
   padding-top: 10px;
   margin-top: 80px;
-  border-top: 6px solid #cccccc;
+  border-top: 6px solid #999999;
 }
 
-header > h2 {
+header > h1 {
 }
 
 header > span {
@@ -45,7 +45,7 @@ header > span a:hover {
 }
 
 #donelist h3 {
-  color: #cccccc;
+  color: #999999;
   border-color: #eeeeee;
 }
 
@@ -104,32 +104,32 @@ form {
 }
 
 #alldone, #undo {
-  color: #aaaaaa;
-  border-color: #aaaaaa; 
+  color: black;
+  border-color: black; 
   }
 
 #alldone:hover, #undo:hover {
-  color: black;
-  border-color: black;
-}
-
-#alldone:active, #undo:active {
   color: white;
   background-color: black;
 }
 
-#delete {
-  color: #eeb4b4;
-  border-color: #eeb4b4;
+#alldone:active, #undo:active {
+  color: white;
+  background-color: #999999;
 }
 
-#delete:hover {
+#delete {
   color: #cc0000;
   border-color: #cc0000;
 }
 
-#delete:active {
+#delete:hover {
+  color: white;
   background-color: #cc0000;
+}
+
+#delete:active {
+  background-color: #aa0000;
   color: white;
 }
 
@@ -141,7 +141,7 @@ form {
 }
 
 .itemdone {
-  color: #cccccc;
+  color: #999999;
   text-decoration: line-through;
   cursor: pointer;
 }
