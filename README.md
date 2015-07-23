@@ -2,6 +2,10 @@
 A minimalist, flat-like, work-in-progress todolist web app created by a newbie.    
 Available live here: http://todolist.pwizla.com
 
+## License
+
+See the [LICENSE](https://github.com/pwizla/tinysteps-todolist/blob/master/LICENSE.md)  file for license rights and limitations (GNU Affero General Public License v3.0).
+
 ## About tinysteps
 
 I started to learn to code in July 2015, and these are my baby steps.
