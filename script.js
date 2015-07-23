@@ -284,7 +284,7 @@ $(document).ready( function() {
     });
 
     // Clicking the "Panel" button (#togglePanel) toggles right panel visibility
-    $('#togglePanel').click( function() {
+    $('.settings-button').click( function() {
       $('#rightpanel').toggle('slide', { direction: 'right'}, 200);
     });
 
