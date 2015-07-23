@@ -217,7 +217,7 @@ ul {
  */
 
   .checkboxStylized label:after {
-    opacity: 0.2;
+    opacity: 0;
     content: '';
     position: absolute;
     width: 9px;
