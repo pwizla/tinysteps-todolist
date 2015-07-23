@@ -286,6 +286,8 @@ $(document).ready( function() {
     // Clicking the "Panel" button (#togglePanel) toggles right panel visibility
     $('.settings-button').click( function() {
       $('#rightpanel').toggle('slide', { direction: 'right'}, 200);
+      $('.settings-button-text').toggleClass('settings-button-text-active');
+      $('.hamburger-menu').toggleClass('hamburger-menu-active');
     });
 
 });

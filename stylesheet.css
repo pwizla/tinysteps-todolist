@@ -191,9 +191,10 @@ ul {
  */
 
   .checkboxStylized {
-    float: left;
+    float: right;
     width: 25px;
     position: relative;
+    margin-right: 30px;
 }
 
 /* 
@@ -260,7 +261,7 @@ ul {
    */
 
   .option-name {
-    float: left;
+    float: right;
     padding: 5px 10px 5px 10px;
 }
 
@@ -270,80 +271,88 @@ ul {
 
 .settings-button {
     position: fixed;
-    top: 38px;
-    right: 10px;
-    width: 100px;
+    top: 35px;
+    right: 20px;
+    width: 115px;
     height: 30px;
     background-color: #fff;
 }
 
-.settings-button:hover {
-  background-color: #000;
-}
-
 .settings-button:hover .settings-button-text {
-  color: #fff;
+  color: #c00;
 }
 
-.settings-button:hover .hamburger-menu {
-  background-color: #fff;
+.settings-button:hover .settings-button-text:after {
+  content: 'Open';
 }
 
-.settings-button:hover .hamburger-menu:after {
-  background-color: #fff;
+.settings-button:hover .settings-button-text-active:after {
+  content: 'Close' !important;
 }
 
-.settings-button:hover .hamburger-menu:before {
-  background-color: #fff;
-}
-
-.round-icon {
+.hamburger-menu, .hamburger-menu-active {
+  margin-top: 8px;
+  margin-left: 10px;
+  width:20px;
+  height:3px;
+  display: block;
   float: left;
-  margin: auto;
-  border-radius: 50%;
-  padding: 1px;
-  width: 30px;
-  height: 30px;
+  position:relative;
 }
 
-.hamburger-menu, .hamburger-active {
-    margin: 7px auto;
-    width:20px;
-    height:3px;
-    background-color:#000;
-    position:relative;
+.hamburger-menu {
+  background-color:#000;
 }
 
-.hamburger-menu:after, .hamburger-menu:before, .hamburger-active:after, .hamburger-active:before {
+.hamburger-menu-active {
+  background-color:#c00;
+}
+
+.hamburger-menu-active:hover .settings-button-text:after {
+  content: 'Close' !important;
+}
+
+.hamburger-menu:after, .hamburger-menu:before, .hamburger-menu-active:after, .hamburger-menu-active:before {
   content: '';
   width: 100%;
   height:3px;
-  background-color:#000;
   position:absolute;
 }
 
-.hamburger-active:after, .hamburger-active:before, .hamburger-active {
+.hamburger-menu:after, .hamburger-menu:before {
+  background-color: #000;
+}
+
+.hamburger-menu-active:after, .hamburger-menu-active:before {
   background-color: #c00;
 }
 
-.hamburger-menu:after, .hamburger-active:after {
+.hamburger-menu:after, .hamburger-menu-active:after {
   top:5px;
 }
 
-.hamburger-menu:before, .hamburger-active:before {
+.hamburger-menu:before, .hamburger-menu-active:before {
   top:10px;
 }
 
-.hamburger-active {
+.settings-button-text, .settings-button-text-active {
+  display: block;
   float: left;
-  position: fixed;
-  top: 35px;
-  margin-left: 20px;
+  font-size: 16px;
+  padding: 8px 6px 6px 12px;
+  font-weight: bold;
 }
 
-.settings-button-text {
-  float: left;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 9px 10px 4px 2px;
+.settings-button-text:after {
+  content: 'Settings';
+}
+
+.settings-button-text-active {
+  color: #c00;
+}
+
+/* Pseudo-elements and pseudo-classes are explained here: http://www.hongkiat.com/blog/pseudo-element-before-after/ */
+.settings-button-text-active:hover:after {
+  /* overrides the 'Open' content from .settings-button-text-active */
+  content: 'Close' !important; 
 }
