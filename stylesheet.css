@@ -147,9 +147,6 @@ ul {
  *****
  */
 
-main {
-}
-
 .slidepanel {
   box-shadow: -5px 0px 5px 0px #d1d1d1; /* position x, position y, blur, spread, color */
   background-color: white;
@@ -188,12 +185,14 @@ main {
 
 /* 
  * Stylized Checkbox 
+ *
+ * The following checkbox stylized part were taken from http://www.paulund.co.uk/style-checkboxes-with-css 
  */
 
 .checkboxStylized {
+  float: left;
   width: 25px;
   position: relative;
-  display: inline-block;
 }
 
 /* 
@@ -243,25 +242,24 @@ main {
    opacity: 0.5;
 }
 
-/* The following checkbox stylized part were taken from http://www.paulund.co.uk/style-checkboxes-with-css */
-
 /** 
  * Create the checkbox state for the tick
  */
+
 .checkboxStylized input[type=checkbox]:checked + label:after {
   opacity: 1;
 }
+
+/* 
+ * END OF STYLE FOR CHECKBOXES
+ */
 
 /*
  * Stylize options names
  */
 
 .option-name {
-  display: inline-block;
+  float: left;
   background-color: blue;
   padding: 5px 10px 5px 10px;
-}
-
-#show-done-section {
-  background-color: green;
 }
