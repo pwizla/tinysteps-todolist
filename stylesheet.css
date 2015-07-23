@@ -4,7 +4,7 @@ body {
   text-decoration: none;
 }
 
-h2 {
+h1 {
   font-family: Raleway;
   font-weight: 900;
   font-size: 36px;
@@ -19,7 +19,7 @@ h3 {
   border-top: 6px solid #999999;
 }
 
-header > h2 {
+header > h1 {
 }
 
 header > span {
