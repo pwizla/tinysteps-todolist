@@ -19,6 +19,7 @@ h3 {
   border-top: 6px solid #999999;
 }
 
+<<<<<<< HEAD
 header > h1 {
 }
 
@@ -39,6 +40,8 @@ header > span a:hover {
   background-color: #cc0000;
 }
 
+=======
+>>>>>>> ui-customization
 #todolist h3 {
   color: #ee0000;
   border-color: #ee0000;
@@ -54,7 +57,7 @@ form {
 }
 
 #newTaskTextInput, #add, #delete, #alldone, #undo {
-  padding: 6px 12px 6px 12px;
+  padding: 9px 12px 6px 12px;
 }
 
 #newTaskTextInput, #add {
@@ -76,7 +79,7 @@ form {
 
 #add, #delete, #alldone, #undo {
   display: inline-block;
-  width: 60px;
+  width: 70px;
   margin: 0px;
   font-weight: bold;
   text-align: center;
@@ -84,7 +87,7 @@ form {
 }
 
 #delete, #alldone, #undo {
-  font-size: 12px;
+  font-size: 14px;
   background-color: white;
   border: 1px solid;
 }
@@ -106,7 +109,7 @@ form {
 #alldone, #undo {
   color: black;
   border-color: black; 
-  }
+}
 
 #alldone:hover, #undo:hover {
   color: white;
@@ -159,4 +162,220 @@ form {
 
 ul {
   width: 310px;
+}
+
+/*
+ ***** 
+ RIGHT PANEL 
+ *****
+ */
+
+.slidepanel {
+  box-shadow: -5px 0px 5px 0px #d1d1d1; /* position x, position y, blur, spread, color */
+  background-color: white;
+  display: none; 
+}
+
+#rightpanel {
+  position: fixed;
+  height: 100%;
+  width: 300px;
+  right: 0;
+  top: 0;
+  padding-top: 20px;
+}
+
+#rightpanel header {
+  position: fixed;
+  top: 0;
+  height: 100px;
+}
+
+#rightpanel header h3 {
+  float: left;
+  padding-left: 50px;
+  padding-top: 40px;
+  color: #c00;
+  border-top: none;
+  margin-top: 0;
+}
+
+#rightpanel-content {
+  position: relative;
+  top: 90px;
+  padding-left: 20px;
+  background-color: red;
+}
+
+/* 
+ * Stylized Checkbox 
+ *
+ * The following checkbox stylized part were taken from http://www.paulund.co.uk/style-checkboxes-with-css 
+ */
+
+  .checkboxStylized {
+    float: right;
+    width: 25px;
+    position: relative;
+    margin-right: 30px;
+}
+
+/* 
+ * Create the box for the checkbox 
+ */
+
+  .checkboxStylized label {
+    cursor: pointer;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    background: #eeeeee;
+    border: 1px solid #ddd;
+}
+
+/*
+ * Display the tick inside the checkbox
+ */
+
+  .checkboxStylized label:after {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 6px;
+    left: 7px;
+    border: 3px solid #c00;
+    border-top: none;
+    border-right: none;
+
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -transform: rotate(-45deg);
+}
+
+/**
+ * Create the hover event of the tick
+ */
+
+  .checkboxStylized label:hover::after {
+    opacity: 0.5;
+}
+
+/** 
+ * Create the checkbox state for the tick
+ */
+
+  .checkboxStylized input[type=checkbox]:checked + label:after {
+    opacity: 1;
+}
+
+/* 
+ * END OF STYLE FOR CHECKBOXES
+ */
+
+  /*
+   * Stylize options names
+   */
+
+  .option-name {
+    float: right;
+    padding: 5px 10px 5px 10px;
+}
+
+/*
+ * Hamburger icon for Settings
+ */
+
+.settings-button {
+    position: fixed;
+    top: 35px;
+    right: 20px;
+    width: 115px;
+    height: 30px;
+    background-color: #fff;
+}
+
+.settings-button:hover .settings-button-text {
+  color: #c00;
+}
+
+.settings-button:hover .settings-button-text:after {
+  content: 'Open';
+}
+
+.settings-button:hover .settings-button-text-active:after {
+  content: 'Close' !important;
+}
+
+.hamburger-menu, .hamburger-menu-active {
+  margin-top: 8px;
+  margin-left: 10px;
+  width:20px;
+  height:3px;
+  display: block;
+  float: left;
+  position:relative;
+}
+
+.hamburger-menu {
+  background-color:#000;
+}
+
+.hamburger-menu-active {
+  background-color:#c00;
+}
+
+.hamburger-menu-active:hover .settings-button-text:after {
+  content: 'Close' !important;
+}
+
+.hamburger-menu:after, .hamburger-menu:before, .hamburger-menu-active:after, .hamburger-menu-active:before {
+  content: '';
+  width: 100%;
+  height:3px;
+  position:absolute;
+}
+
+.hamburger-menu:after, .hamburger-menu:before {
+  background-color: #000;
+}
+
+.hamburger-menu-active:after, .hamburger-menu-active:before {
+  background-color: #c00;
+}
+
+.hamburger-menu:after, .hamburger-menu-active:after {
+  top:5px;
+}
+
+.hamburger-menu:before, .hamburger-menu-active:before {
+  top:10px;
+}
+
+.settings-button-text, .settings-button-text-active {
+  display: block;
+  float: left;
+  font-size: 16px;
+  padding: 8px 6px 6px 12px;
+  font-weight: bold;
+}
+
+.settings-button-text:after {
+  content: 'Settings';
+}
+
+.settings-button-text-active {
+  color: #c00;
+}
+
+/* Pseudo-elements and pseudo-classes are explained here: http://www.hongkiat.com/blog/pseudo-element-before-after/ */
+.settings-button-text-active:hover:after {
+  /* overrides the 'Open' content from .settings-button-text-active */
+  content: 'Close' !important; 
 }
