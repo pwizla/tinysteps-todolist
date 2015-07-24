@@ -156,7 +156,7 @@ ul {
 #rightpanel {
   position: fixed;
   height: 100%;
-  width: 250px;
+  width: 300px;
   right: 0;
   top: 0;
   padding-top: 20px;
@@ -179,7 +179,7 @@ ul {
 
 #rightpanel-content {
   position: relative;
-  top: 100px;
+  top: 90px;
   padding-left: 20px;
   background-color: red;
 }
