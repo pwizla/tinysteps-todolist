@@ -1,11 +1,13 @@
+TEST
+
 body {
   font-family: Helvetica, Arial, sans-serif;
   padding-left: 10px;
   text-decoration: none;
 }
 
-h2 {
-  font-family: Raleway;
+h1 {
+  font-family: Raleway, Helvetica, Arial, sans-serif;
   font-weight: 900;
   font-size: 36px;
   color: #ee0000;
@@ -17,6 +19,31 @@ h3 {
   padding-top: 10px;
   margin-top: 80px;
   border-top: 6px solid #999999;
+}
+
+header > h1 {
+}
+
+header > span {
+  margin-left: 25px;
+  color: #aacccc;
+  font-size: 14px;
+}
+
+header > span a {
+  text-decoration: none;
+  color: #cc0000;
+  padding: 2px 5px 2px 5px;
+}
+
+header > span a:hover {
+  color: white;
+  background-color: #cc0000;
+}
+
+#todolist, #donelist {
+  float: left;
+  margin-right: 5em;
 }
 
 #todolist h3 {
@@ -356,3 +383,27 @@ ul {
   /* overrides the 'Open' content from .settings-button-text-active */
   content: 'Close' !important; 
 }
+
+
+/*
+ *********************************************
+ * MEDIA QUERIES FOR A MOBILE FIRST APPROACH *
+ ********************************************/
+/*
+@media screen and (min-width: 88em) {
+
+body {
+}
+
+#todolist, #donelist {
+  width: 560px;
+  margin-right: 3em;
+}
+
+#alldone, #undo, #delete {
+  font-size: 1.1em;
+  width: 90px;
+}
+
+}
+*/

@@ -5,8 +5,6 @@
   <link rel="shortcut icon" href="resources/favicon.ico"><link/>
   <link href='http://fonts.googleapis.com/css?family=Raleway:900' rel='stylesheet' type='text/css'>
 
-  <!-- main custom css -->
-  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
 
   <!-- loads Google-hosted jQuery and jQuery UI -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -17,6 +15,9 @@
   <script src="http://www.appelsiini.net/download/jquery.jeditable.mini.js"></script>
 -->
 
+  <!-- main custom css -->
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+
   <script src="script.js" type="text/javascript"></script> 
 
 </head>
@@ -25,7 +26,7 @@
   <main class="cd-main-content">
   <!-- header & span structure suggested by http://stackoverflow.com/a/13194762/5139147 -->
   <header>
-    <h2>My Todo List</h2>
+    <h1>My Todo List</h2>
     <!-- <span>by <a href="http://twitter.com/pwizla">pwizla</a></span> -->
     <!-- <span><b><a target="_blank" href="https://github.com/pwizla/tinysteps-todolist/blob/gh-pages/README.md">README</a></b></span> -->
     <div class="settings-button">
@@ -47,13 +48,13 @@
   <br/>
   <div class="error-message"></div>
 
-  <div id="todolist">
+  <div id="todolist" class="resizable">
     <h3>To do:</h3>
     <div id="alldone">Complete!</div>
     <ul class="list"></ul>
   </div> <!-- todolist -->
 
-  <div id="donelist">
+  <div id="donelist" class="resizable">
     <h3>Completed:</h3>
     <div id="undo">Undo All</div>
     <div id="delete">Delete All</div>
