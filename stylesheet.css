@@ -54,6 +54,10 @@ header > span a:hover {
   border-color: #eeeeee;
 }
 
+.resizable {
+  resize: horizontal;
+}
+
 form {
   display: inline-block;
 }
