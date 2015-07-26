@@ -99,7 +99,7 @@ $(document).ready( function() {
 */
 
           //appends a new list item, containing the text typed by the user, to the '.list' div
-          $('.list').append('<li class="item">   ' + itemText + '</li>'); 
+          $('.list').append('<li class="item">' + itemText + '</li>'); 
 
           // Uncomment the following line to print helpful message(s) to the console (useful for DEBUG)
 //        console.log("This text from the itemText variable has been added to .list div");

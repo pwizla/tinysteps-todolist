@@ -58,6 +58,10 @@ header > span a:hover {
   resize: horizontal;
 }
 
+.resizing-helper {
+  border: 1px solid #ccc;
+}
+
 form {
   display: inline-block;
 }
