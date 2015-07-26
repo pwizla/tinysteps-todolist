@@ -132,7 +132,6 @@ $(document).ready( function() {
   // === END OF FUNCTION HANDLING NEW TASKS ===
 
 
-
   /* The little function below toggles 'itemdone' class 
      on items (from the '.list') that are clicked
      so that the item is greyed out and formatted as strikethrough;
@@ -150,11 +149,16 @@ $(document).ready( function() {
 
 
   /* The little function below does the opposite
-     e.g. moving back a "done" item to the "todo" list when clicked */
-  $(document).on('click', '.itemdone', function() {
-      $(this).removeClass('itemdone');
-      // moves back the undone item to the 'list' div
-      $('.list').append(this);
+     e.g. moving back a "done" item to the "todo" list when clicked.
+     IF SHIFT CLICK, item is DELETED. */
+  $(document).on('click', '.itemdone', function(e) {
+      if (e.shiftKey) { // if Shift-Click instead of a simple Click
+        $(this).remove(); // individual item is deleted
+      } else {
+        $(this).removeClass('itemdone');
+        // moves back the undone item to the 'list' div
+        $('.list').append(this);
+      }
       // reflects changes to $list and $listdone
       updateTodoList();
       updateDoneList();
@@ -289,5 +293,11 @@ $(document).ready( function() {
       $('.settings-button-text').toggleClass('settings-button-text-active');
       $('.hamburger-menu').toggleClass('hamburger-menu-active');
     });
+
+    // Gives the ability to resize the todolist and donelist divs
+    // (because I added the "resizable-list" class to these two divs
+    $('.resizable').resizable({
+      helper: "resizing-helper"
+    }); 
 
 });

@@ -5,8 +5,6 @@
   <link rel="shortcut icon" href="resources/favicon.ico"><link/>
   <link href='http://fonts.googleapis.com/css?family=Raleway:900' rel='stylesheet' type='text/css'>
 
-  <!-- main custom css -->
-  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
 
   <!-- loads Google-hosted jQuery and jQuery UI -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -19,6 +17,9 @@
 <!-- jEditable not used for now 
   <script src="http://www.appelsiini.net/download/jquery.jeditable.mini.js"></script>
 -->
+
+  <!-- main custom css -->
+  <link rel="stylesheet" type="text/css" href="stylesheet.css"></link>
 
   <script src="script.js" type="text/javascript"></script> 
 
@@ -50,13 +51,13 @@
   <br/>
   <div class="error-message"></div>
 
-  <div id="todolist">
+  <div id="todolist" class="resizable">
     <h3>To do:</h3>
     <div id="alldone">Complete!</div>
     <ul class="list"></ul>
   </div> <!-- todolist -->
 
-  <div id="donelist">
+  <div id="donelist" class="resizable">
     <h3>Completed:</h3>
     <div id="undo">Undo All</div>
     <div id="delete">Delete All</div>
