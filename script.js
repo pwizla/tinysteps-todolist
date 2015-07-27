@@ -7,9 +7,13 @@ $(document).ready( function() {
 
     var itemTooltip = "Click to mark the task as completed";
     var itemdoneTooltip = "Click to move the task back to the To Do list, Shift-Click to DELETE the task";
-    var alldoneTooltip = "";
-    var undoTooltip = "";
-    var deleteTooltip = "";
+    var alldoneTooltip = "Click to mark all tasks as completed";
+    var undoTooltip = "Click to move all tasks back to the To do list";
+    var deleteTooltip = "Click to DELETE all completed tasks";
+
+    $('#alldone').prop('title', alldoneTooltip);
+    $('#undo').prop('title', undoTooltip);
+    $('#delete').prop('title', deleteTooltip);
     
     var $list = localStorage.getItem('todolist');
     var $listdone = localStorage.getItem('donelist');
