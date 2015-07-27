@@ -99,7 +99,7 @@ $(document).ready( function() {
 */
 
           //appends a new list item, containing the text typed by the user, to the '.list' div
-          $('.list').append('<li class="item">   ' + itemText + '</li>'); 
+          $('.list').append('<li class="item" title="Click to mark the task as completed">   ' + itemText + '</li>'); 
 
           // Uncomment the following line to print helpful message(s) to the console (useful for DEBUG)
 //        console.log("This text from the itemText variable has been added to .list div");
@@ -138,6 +138,7 @@ $(document).ready( function() {
      it also moves the item to the '.listdone' div */
   $(document).on('click', '.item', function() { 
       $(this).toggleClass('itemdone');
+      $(this).prop('title', 'Click to move the task back to the To Do list, Shift-Click to DELETE the task');
       // moves the done item to the 'listdone' div
       $('.listdone').append(this);
       // reflects changes to $list and $listdone
@@ -156,6 +157,7 @@ $(document).ready( function() {
         $(this).remove(); // individual item is deleted
       } else {
         $(this).removeClass('itemdone');
+        $(this).prop('title', 'Click to mark the task as completed');
         // moves back the undone item to the 'list' div
         $('.list').append(this);
       }
