@@ -11,6 +11,7 @@
     var undoTooltip = "Click to move all tasks back to the To do list";
     var deleteTooltip = "Click to DELETE all completed tasks";
 
+    var shiftClickDeletesCompletedItem = true;
 
 $(document).ready( function() {
 
@@ -197,8 +198,8 @@ $(document).ready( function() {
      e.g. moving back a "done" item to the "todo" list when clicked.
      IF SHIFT CLICK, item is DELETED. */
   $(document).on('click', '.itemdone', function(e) {
-      if (e.shiftKey) { // if Shift-Click instead of a simple Click
-        $(this).remove(); // individual item is deleted
+      if (e.shiftKey && shiftClickDeletesCompletedItem === true) { // if Shift-Click instead of a simple Click (and option is not disabled in Settings)
+        $(this).remove(); 
       } else {
         $(this).removeClass('itemdone');
         $(this).prop('title', itemTooltip);
@@ -330,6 +331,7 @@ $(document).ready( function() {
       $('#donelist').toggle();
     });
 
+    // Handles clicks on the "Show Tooltips" checkbox in Settings
     $('#show-tooltips-checkbox').change( function () {
       console.log("#show-tooltips-checkbox has changed");
       if ( $('#show-tooltips-checkbox').is(':checked')) {
@@ -339,9 +341,18 @@ $(document).ready( function() {
       updateTooltipsContent();
     });
 
+    // Turns on/off the "Shift-Click to delete" behavior
+    $('#shiftclick-delete-checkbox').change ( function() {
+        console.log("#shiftclick-delete-checkbox has changed");
+        shiftClickDeletesCompletedItem = !shiftClickDeletesCompletedItem;
+        console.log("var shiftClickDeletesCompletedItem = " + shiftClickDeletesCompletedItem);
+        if ( $('#shiftclick-delete-checkbox').is(':checked')) {
+            console.log("#shiftclick-delete-checkbox is now Checked");
+        } else { 
+            console.log("#shiftclick-delete-checkbox is now UNchecked");
+        }
+    });
 
-
-    // Clicking the "Panel" button (#togglePanel) toggles right panel visibility
     $('.settings-button').click( function() {
       $('#rightpanel').toggle('slide', { direction: 'right'}, 200);
       $('.settings-button-text').toggleClass('settings-button-text-active');
