@@ -1,9 +1,9 @@
+// BEGIN SCRIPT.JS FILE
+//
     // stores content (html, including li tags) of the "To do" list
     var $list = $('.list').html();
     // stores content (html, including li tags) of the "Done" list
     var $listdone = $('.listdone').html();
-
-$(document).ready( function() {
 
     var itemTooltip = "Click to mark the task as completed";
     var itemdoneTooltip = "Click to move the task back to the To Do list, Shift-Click to DELETE the task";
@@ -11,14 +11,15 @@ $(document).ready( function() {
     var undoTooltip = "Click to move all tasks back to the To do list";
     var deleteTooltip = "Click to DELETE all completed tasks";
 
-    $('#alldone').prop('title', alldoneTooltip);
-    $('#undo').prop('title', undoTooltip);
-    $('#delete').prop('title', deleteTooltip);
-    
+
+$(document).ready( function() {
+
     var $list = localStorage.getItem('todolist');
     var $listdone = localStorage.getItem('donelist');
     console.log("after localStorage call, $list is:", $list);
     console.log("after localStorage recall, $listdone is", $listdone);
+
+    updateTooltipsContent();
 
     // displays the content of "To do" and "Done" lists as recalled from LocalStorage
     $('.list').val($list);
@@ -57,6 +58,39 @@ $(document).ready( function() {
       addNewTask();
   });
 
+
+  if ( $('#show-tooltips-checkbox').is(':checked') ) {
+    console.log("#show-tooltips-checkbox is checked");
+  } else {
+    console.log("#show-tooltips-checkbox is NOT checked");
+  }
+  
+
+  function updateTooltipsContent () {
+    if ( $('#show-tooltips-checkbox').is(':checked') ) {
+      itemTooltip = "Click to mark the task as completed";
+      itemdoneTooltip = "Click to move the task back to the To Do list, Shift-Click to DELETE the task";
+      alldoneTooltip = "Click to mark all tasks as completed";
+      undoTooltip = "Click to move all tasks back to the To do list";
+      deleteTooltip = "Click to DELETE all completed tasks";
+    } else {
+      itemTooltip = "";
+      itemdoneTooltip = "";
+      alldoneTooltip = "";
+      undoTooltip = "";
+      deleteTooltip = "";  
+    }
+
+    $('.item').prop('title', itemTooltip);
+    $('.itemdone').prop('title', itemdoneTooltip);
+    $('#alldone').prop('title', alldoneTooltip);
+    $('#undo').prop('title', undoTooltip);
+    $('#delete').prop('title', deleteTooltip);
+
+  };    
+
+
+  
   /* === FUNCTION TO HANDLE WHAT HAPPENS WHEN YOU CLICK THE ADD "BUTTON" 
    Basically, when '#add' button is clicked, the function gets the text 
    typed in the input text box whose name is '#newTaskTextInput' 
@@ -291,13 +325,21 @@ $(document).ready( function() {
         console.log("localStorage item 'donelist' is:",localStorage.getItem ('donelist'));
     };
 
-    /* Clicking the "Hide Done" button toggles display 
-       for Done list and changes button text accordingly */
-    $('#checkboxStylizedInput').change( function() {
+    // Clicking the "Hide Done" button toggles display 
+    $('#show-done-checkbox').change( function() {
       $('#donelist').toggle();
-      // sets the text button based on a test
-      // $(this).text( ($(this).text() == 'Hide Done' ? 'Show Done' : 'Hide Done'));
     });
+
+    $('#show-tooltips-checkbox').change( function () {
+      console.log("#show-tooltips-checkbox has changed");
+      if ( $('#show-tooltips-checkbox').is(':checked')) {
+        console.log("checkbox is now checked");
+      } else { console.log("checkbox is now UNCHECKED");
+      }
+      updateTooltipsContent();
+    });
+
+
 
     // Clicking the "Panel" button (#togglePanel) toggles right panel visibility
     $('.settings-button').click( function() {
@@ -309,7 +351,9 @@ $(document).ready( function() {
     // Gives the ability to resize the todolist and donelist divs
     // (because I added the "resizable-list" class to these two divs
     $('.resizable').resizable({
-      helper: "resizing-helper"
+      helper: "resizing-helper" // adds class for CSS
     }); 
 
 });
+
+// END "SCRIPT.JS" file
