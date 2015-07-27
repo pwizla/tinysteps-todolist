@@ -213,6 +213,11 @@ ul {
   background-color: red;
 }
 
+.pw-option-group {
+  float: right;
+  margin: 5px 30px 5px 0px;
+}
+
 /* 
  * Stylized Checkbox 
  *
@@ -220,10 +225,9 @@ ul {
  */
 
   .checkboxStylized {
+    position: relative;
     float: right;
     width: 25px;
-    position: relative;
-    margin-right: 30px;
 }
 
 /* 
