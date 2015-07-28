@@ -365,6 +365,20 @@ $(document).ready( function() {
       helper: "resizing-helper" // adds class for CSS
     }); 
 
+    $('#use-darktheme-checkbox').change( function() {
+      var stylesheet = "";
+      console.log("#use-darktheme-checkbox has changed");
+      if ($('#use-darktheme-checkbox').is(':checked')) {
+        console.log("#use-darktheme-checkbox is now Checked");
+        stylesheet = "stylesheet-dark.css";
+      } else { 
+        console.log("#use-darktheme-checkbox is now UNchecked"); 
+        stylesheet = "stylesheet.css";
+      }
+      console.log("applying " + stylesheet);
+      $('#theme').attr("href", stylesheet); 
+    });
+
 });
 
 // END "SCRIPT.JS" file
