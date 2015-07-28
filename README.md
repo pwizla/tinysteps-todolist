@@ -34,5 +34,4 @@ Task lists are saved locally on your machine. See [LocalStorage support details]
 
 ## What's planned for future versions
 
-* Responsive design (so far the list width is a bit narrow, by design)
-* Sliding pane with settings (mainly to offer customization features: choosing colors, fonts, hiding the "Done" list…)
+You might want to check the wiki for a [product roadmap](https://github.com/pwizla/tinysteps-todolist/wiki).

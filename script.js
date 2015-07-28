@@ -1,7 +1,17 @@
+// BEGIN SCRIPT.JS FILE
+//
     // stores content (html, including li tags) of the "To do" list
     var $list = $('.list').html();
     // stores content (html, including li tags) of the "Done" list
     var $listdone = $('.listdone').html();
+
+    var itemTooltip = "Click to mark the task as completed";
+    var itemdoneTooltip = "Click to move the task back to the To Do list, Shift-Click to DELETE the task";
+    var alldoneTooltip = "Click to mark all tasks as completed";
+    var undoTooltip = "Click to move all tasks back to the To do list";
+    var deleteTooltip = "Click to DELETE all completed tasks";
+
+    var shiftClickDeletesCompletedItem = true;
 
 $(document).ready( function() {
 
@@ -9,6 +19,8 @@ $(document).ready( function() {
     var $listdone = localStorage.getItem('donelist');
     console.log("after localStorage call, $list is:", $list);
     console.log("after localStorage recall, $listdone is", $listdone);
+
+    updateTooltipsContent();
 
     // displays the content of "To do" and "Done" lists as recalled from LocalStorage
     $('.list').val($list);
@@ -47,6 +59,39 @@ $(document).ready( function() {
       addNewTask();
   });
 
+
+  if ( $('#show-tooltips-checkbox').is(':checked') ) {
+    console.log("#show-tooltips-checkbox is checked");
+  } else {
+    console.log("#show-tooltips-checkbox is NOT checked");
+  }
+  
+
+  function updateTooltipsContent () {
+    if ( $('#show-tooltips-checkbox').is(':checked') ) {
+      itemTooltip = "Click to mark the task as completed";
+      itemdoneTooltip = "Click to move the task back to the To Do list, Shift-Click to DELETE the task";
+      alldoneTooltip = "Click to mark all tasks as completed";
+      undoTooltip = "Click to move all tasks back to the To do list";
+      deleteTooltip = "Click to DELETE all completed tasks";
+    } else {
+      itemTooltip = "";
+      itemdoneTooltip = "";
+      alldoneTooltip = "";
+      undoTooltip = "";
+      deleteTooltip = "";  
+    }
+
+    $('.item').prop('title', itemTooltip);
+    $('.itemdone').prop('title', itemdoneTooltip);
+    $('#alldone').prop('title', alldoneTooltip);
+    $('#undo').prop('title', undoTooltip);
+    $('#delete').prop('title', deleteTooltip);
+
+  };    
+
+
+  
   /* === FUNCTION TO HANDLE WHAT HAPPENS WHEN YOU CLICK THE ADD "BUTTON" 
    Basically, when '#add' button is clicked, the function gets the text 
    typed in the input text box whose name is '#newTaskTextInput' 
@@ -99,7 +144,7 @@ $(document).ready( function() {
 */
 
           //appends a new list item, containing the text typed by the user, to the '.list' div
-          $('.list').append('<li class="item">   ' + itemText + '</li>'); 
+          $('.list').append('<li class="item" title="' + itemTooltip +  '"> ' + itemText + '</li>'); 
 
           // Uncomment the following line to print helpful message(s) to the console (useful for DEBUG)
 //        console.log("This text from the itemText variable has been added to .list div");
@@ -132,13 +177,13 @@ $(document).ready( function() {
   // === END OF FUNCTION HANDLING NEW TASKS ===
 
 
-
   /* The little function below toggles 'itemdone' class 
      on items (from the '.list') that are clicked
      so that the item is greyed out and formatted as strikethrough;
      it also moves the item to the '.listdone' div */
   $(document).on('click', '.item', function() { 
       $(this).toggleClass('itemdone');
+      $(this).prop('title', itemdoneTooltip);
       // moves the done item to the 'listdone' div
       $('.listdone').append(this);
       // reflects changes to $list and $listdone
@@ -150,11 +195,17 @@ $(document).ready( function() {
 
 
   /* The little function below does the opposite
-     e.g. moving back a "done" item to the "todo" list when clicked */
-  $(document).on('click', '.itemdone', function() {
-      $(this).removeClass('itemdone');
-      // moves back the undone item to the 'list' div
-      $('.list').append(this);
+     e.g. moving back a "done" item to the "todo" list when clicked.
+     IF SHIFT CLICK, item is DELETED. */
+  $(document).on('click', '.itemdone', function(e) {
+      if (e.shiftKey && shiftClickDeletesCompletedItem === true) { // if Shift-Click instead of a simple Click (and option is not disabled in Settings)
+        $(this).remove(); 
+      } else {
+        $(this).removeClass('itemdone');
+        $(this).prop('title', itemTooltip);
+        // moves back the undone item to the 'list' div
+        $('.list').append(this);
+      }
       // reflects changes to $list and $listdone
       updateTodoList();
       updateDoneList();
@@ -275,4 +326,59 @@ $(document).ready( function() {
         console.log("localStorage item 'donelist' is:",localStorage.getItem ('donelist'));
     };
 
+    // Clicking the "Hide Done" button toggles display 
+    $('#show-done-checkbox').change( function() {
+      $('#donelist').toggle();
+    });
+
+    // Handles clicks on the "Show Tooltips" checkbox in Settings
+    $('#show-tooltips-checkbox').change( function () {
+      console.log("#show-tooltips-checkbox has changed");
+      if ( $('#show-tooltips-checkbox').is(':checked')) {
+        console.log("checkbox is now checked");
+      } else { console.log("checkbox is now UNCHECKED");
+      }
+      updateTooltipsContent();
+    });
+
+    // Turns on/off the "Shift-Click to delete" behavior
+    $('#shiftclick-delete-checkbox').change ( function() {
+        console.log("#shiftclick-delete-checkbox has changed");
+        shiftClickDeletesCompletedItem = !shiftClickDeletesCompletedItem;
+        console.log("var shiftClickDeletesCompletedItem = " + shiftClickDeletesCompletedItem);
+        if ( $('#shiftclick-delete-checkbox').is(':checked')) {
+            console.log("#shiftclick-delete-checkbox is now Checked");
+        } else { 
+            console.log("#shiftclick-delete-checkbox is now UNchecked");
+        }
+    });
+
+    $('.settings-button').click( function() {
+      $('#rightpanel').toggle('slide', { direction: 'right'}, 200);
+      $('.settings-button-text').toggleClass('settings-button-text-active');
+      $('.hamburger-menu').toggleClass('hamburger-menu-active');
+    });
+
+    // Gives the ability to resize the todolist and donelist divs
+    // (because I added the "resizable-list" class to these two divs
+    $('.resizable').resizable({
+      helper: "resizing-helper" // adds class for CSS
+    }); 
+
+    $('#use-darktheme-checkbox').change( function() {
+      var stylesheet = "";
+      console.log("#use-darktheme-checkbox has changed");
+      if ($('#use-darktheme-checkbox').is(':checked')) {
+        console.log("#use-darktheme-checkbox is now Checked");
+        stylesheet = "stylesheet-dark.css";
+      } else { 
+        console.log("#use-darktheme-checkbox is now UNchecked"); 
+        stylesheet = "stylesheet.css";
+      }
+      console.log("applying " + stylesheet);
+      $('#theme').attr("href", stylesheet); 
+    });
+
 });
+
+// END "SCRIPT.JS" file

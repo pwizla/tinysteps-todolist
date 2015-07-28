@@ -2,13 +2,16 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   padding-left: 10px;
   text-decoration: none;
+  background-color: #191919;
+  color: #eee;
+  letter-spacing: +.05em;
 }
 
 h1 {
   font-family: Raleway, Helvetica, Arial, sans-serif;
   font-weight: 900;
   font-size: 36px;
-  color: #ee0000;
+  color: #e00;
 }
 
 h3 {
@@ -16,7 +19,7 @@ h3 {
   width: 345px;
   padding-top: 10px;
   margin-top: 80px;
-  border-top: 6px solid #999999;
+  border-top: 6px solid #999;
 }
 
 header > h1 {
@@ -24,19 +27,19 @@ header > h1 {
 
 header > span {
   margin-left: 25px;
-  color: #aacccc;
+  color: #acc;
   font-size: 14px;
 }
 
 header > span a {
   text-decoration: none;
-  color: #cc0000;
+  color: #c00;
   padding: 2px 5px 2px 5px;
 }
 
 header > span a:hover {
   color: white;
-  background-color: #cc0000;
+  background-color: #c00;
 }
 
 #todolist, #donelist {
@@ -45,13 +48,13 @@ header > span a:hover {
 }
 
 #todolist h3 {
-  color: #ee0000;
-  border-color: #ee0000;
+  color: #e00;
+  border-color: #e00;
 }
 
 #donelist h3 {
-  color: #999999;
-  border-color: #eeeeee;
+  color: #777;
+  border-color: #777;
 }
 
 .resizable {
@@ -73,19 +76,19 @@ form {
 #newTaskTextInput {
   width: 320px; 
   border: 1px solid #665544;
-  color: #cccccc;
+  color: #ccc;
 } 
 
 #newTaskTextInput:focus {
   color: black;
-  border-color: #ee0000;
+  border-color: #e00;
 }
 
 /* === STYLING THE BUTTON-LIKE DIVS === */
 
 #add, #delete, #alldone, #undo {
   display: inline-block;
-  width: 70px;
+  width: 80px;
   margin: 0px;
   font-weight: bold;
   text-align: center;
@@ -94,53 +97,38 @@ form {
 
 #delete, #alldone, #undo {
   font-size: 14px;
-  background-color: white;
   border: 1px solid;
 }
 
-#add {
-  background-color: #ee0000;
-  color: white;
-  border: none;
-}
-
-#add:hover {
-  background-color: #cc0000;
-}
-
-#add:active {
-  background-color: #aa0000;
-}
-
 #alldone, #undo {
-  color: black;
+  background-color: #ccc;
+  color: #000;
   border-color: black; 
 }
 
+#delete, #add {
+  background-color: #e00;
+  color: #000;
+  border: none;
+}
+
+#add:hover, #delete:hover {
+  color: #fff;
+  background-color: #c00;
+}
+
+#add:active, #delete:active {
+  background-color: #a00;
+}
+
 #alldone:hover, #undo:hover {
-  color: white;
-  background-color: black;
+  background-color: #aaa;
 }
 
 #alldone:active, #undo:active {
-  color: white;
-  background-color: #999999;
+  background-color: #777;
 }
 
-#delete {
-  color: #cc0000;
-  border-color: #cc0000;
-}
-
-#delete:hover {
-  color: white;
-  background-color: #cc0000;
-}
-
-#delete:active {
-  background-color: #aa0000;
-  color: white;
-}
 
 /* === STYLING THE LIST ITEMS === */
 
@@ -150,14 +138,14 @@ form {
 }
 
 .itemdone {
-  color: #999999;
+  color: #777;
   text-decoration: line-through;
   cursor: pointer;
 }
 
 .error-message {
   padding-top: 20px;
-  color: #cc0000;
+  color: #c00;
   font-style: italic;
   font-weight: bold;
 }
@@ -177,8 +165,9 @@ ul {
  */
 
 .slidepanel {
-  box-shadow: -5px 0px 5px 0px #d1d1d1; /* position x, position y, blur, spread, color */
-  background-color: white;
+  box-shadow: -5px 0px 10px 9px #1c1c1c; /* position x, position y, blur, spread, color */
+  background-color: #1c1c1c;
+  border-left: 1px solid #232323;
   display: none; 
 }
 
@@ -242,7 +231,6 @@ ul {
     top: 0;
     left: 0;
     background: #eeeeee;
-    border: 1px solid #ddd;
 }
 
 /*
@@ -258,7 +246,7 @@ ul {
     background: transparent;
     top: 6px;
     left: 7px;
-    border: 3px solid #c00;
+    border: 3px solid #200;
     border-top: none;
     border-right: none;
 
@@ -267,14 +255,6 @@ ul {
     -o-transform: rotate(-45deg);
     -ms-transform: rotate(-45deg);
     -transform: rotate(-45deg);
-}
-
-/**
- * Create the hover event of the tick
- */
-
-  .checkboxStylized label:hover::after {
-    opacity: 0.5;
 }
 
 /** 
@@ -306,13 +286,17 @@ ul {
     position: fixed;
     top: 35px;
     right: 20px;
-    width: 115px;
+    width: 125px;
     height: 30px;
-    background-color: #fff;
+    background-color: #191919;
+}
+
+.settings-button-text {
+  color: #eee; 
 }
 
 .settings-button:hover .settings-button-text {
-  color: #c00;
+  color: #f00;
 }
 
 .settings-button:hover .settings-button-text:after {
@@ -334,11 +318,11 @@ ul {
 }
 
 .hamburger-menu {
-  background-color:#000;
+  background-color:#eee;
 }
 
 .hamburger-menu-active {
-  background-color:#c00;
+  background-color:#f00;
 }
 
 .hamburger-menu-active:hover .settings-button-text:after {
@@ -353,11 +337,11 @@ ul {
 }
 
 .hamburger-menu:after, .hamburger-menu:before {
-  background-color: #000;
+  background-color: #eee;
 }
 
 .hamburger-menu-active:after, .hamburger-menu-active:before {
-  background-color: #c00;
+  background-color: #f00;
 }
 
 .hamburger-menu:after, .hamburger-menu-active:after {
@@ -381,7 +365,7 @@ ul {
 }
 
 .settings-button-text-active {
-  color: #c00;
+  color: #f00;
 }
 
 /* Pseudo-elements and pseudo-classes are explained here: http://www.hongkiat.com/blog/pseudo-element-before-after/ */
