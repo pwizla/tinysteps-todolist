@@ -24,12 +24,12 @@ So each of the **tinysteps** projects are little web apps that I (will) create f
 * Add new tasks by pressing the enter key (the input text box is focused by default as soon as page is loaded)
 * Add new tasks by clicking on the "Add" button 
 * Re-order tasks by drag'n'drop
-* Mark a task as done by clicking on it
-* "Uncheck" a done task (thus moving it back to the "To Do" list) by clicking on it 
-* Mark all tasks as done by clicking on the "All Done!" button
-* Uncheck all done tasks (moving them back to the "To Do" list all at once) by clicking on the "Undo All" button
+* Mark a task as completed by clicking on it
+* "Uncheck" a completed task (thus moving it back to the "To Do" list) by clicking on it 
+* Mark all tasks as completed by clicking on the "All Done!" button
+* Uncheck all completed tasks (moving them back to the "To Do" list all at once) by clicking on the "Undo All" button
 * Shift-click to permanently delete individual *completed* tasks
-* Delete all done tasks **permanently** by clicking on the "Delete All" button
+* Delete all completed tasks **permanently** by clicking on the "Delete All" button
 
 Task lists are saved locally on your machine. See [LocalStorage support details](https://github.com/pwizla/tinysteps-todolist/releases/tag/v0.3.0).
 
