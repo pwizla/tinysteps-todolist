@@ -359,11 +359,13 @@ $(document).ready( function() {
       $('.hamburger-menu').toggleClass('hamburger-menu-active');
     });
 
+/*
     // Gives the ability to resize the todolist and donelist divs
     // (because I added the "resizable-list" class to these two divs
     $('.resizable').resizable({
       helper: "resizing-helper" // adds class for CSS
     }); 
+*/
 
     $('#use-darktheme-checkbox').change( function() {
       var stylesheet = "";
