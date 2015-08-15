@@ -11,7 +11,7 @@
     var undoTooltip = "Click to move all tasks back to the To do list";
     var deleteTooltip = "Click to DELETE all completed tasks";
 
-    var shiftClickDeletesCompletedItem = true;
+    var shiftClickDeletesCompletedItem = false;
 
 $(document).ready( function() {
 
