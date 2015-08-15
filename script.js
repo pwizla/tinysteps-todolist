@@ -381,6 +381,10 @@ $(document).ready( function() {
       $('#theme').attr("href", stylesheet); 
     });
 
+    $('#list-selector-close').click( function() {
+      $('#list-selector').hide();
+    });
+
 });
 
 // END "SCRIPT.JS" file
