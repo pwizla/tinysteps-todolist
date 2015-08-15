@@ -227,6 +227,11 @@ ul {
   color: #999;
 }
 
+.creditsline {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
 #credits a {
   text-decoration: none;
   color: #c00;
