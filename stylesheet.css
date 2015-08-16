@@ -282,6 +282,16 @@ ul {
   right: 10px;
   top: 10px;
   cursor: pointer;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  vertical-align: center;
+}
+
+#list-selector .close-button:hover {
+  color: #fff;
+  background-color: #ccc;
+  border-radius: 50%;
 }
 
 /* 
