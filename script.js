@@ -12,9 +12,11 @@
     var deleteTooltip = "Click to DELETE all completed tasks";
 
     var shiftClickDeletesCompletedItem = false;
+    var showListSelector = false;
 
 $(document).ready( function() {
 
+  
     var $list = localStorage.getItem('todolist');
     var $listdone = localStorage.getItem('donelist');
     console.log("after localStorage call, $list is:", $list);
@@ -381,9 +383,23 @@ $(document).ready( function() {
       $('#theme').attr("href", stylesheet); 
     });
 
-    $('#list-selector-close').click( function() {
+    $('#list-selector .close-button').click( function() {
       $('#list-selector').hide();
     });
+
+    $('#show-list-selector').change( function() {
+      console.log("#show-list-selector has changed");
+      if ($('#show-list-selector').is(':checked')) {
+        console.log("#show-list-selector is now Checked");
+        $('#list-selector').show();
+        console.log("showing list-selector");
+      } else {
+        console.log("#show-list-selector is now UNchecked");
+        $('#list-selector').hide();
+        console.log("hiding list-selector");
+      }
+      });
+
 
 });
 
