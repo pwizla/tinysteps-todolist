@@ -4,10 +4,6 @@ body {
   text-decoration: none;
 }
 
-main {
-  z-index: 1;
-}
-
 h1 {
   font-family: Raleway, Helvetica, Arial, sans-serif;
   font-weight: 900;
@@ -247,56 +243,35 @@ ul {
   background-color: #c00;
 }
 
+
+
+
 #list-selector {
   display: none;
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  width: 400px;
-  height: 200px;
-  border: solid 1px #ccc;
-  box-shadow: 5px 5px 5px 0px #d1d1d1; /* position x, position y, blur, spread, color */
+  float: left;
+  width: 345px;
+  height: 80px;
   background-color: #fff;
-  z-index: 2;
+  margin: 30px 10px 0px 0px;
 }
 
 #list-selector h3 {
-  position: relative;
-  margin: 40px 20px 40px 20px;
+  display: inline;
+  float: left;
   font-size: 18px;
   color: #000;
   padding: 0px;
-  text-align: center;
-  border: none;
   font-weight: normal;
+  border: none;
+  margin: 0;
 }
 
 #list-selection {
-  position: relative;
-  margin: 0px 90px 0px 90px;
+  float: left;
+  display: inline;
+  margin: 10px 90px 0px 0px;
   width: 220px;
-}
-
-#list-selector .close-button {
-  position: relative;
-  color: #ccc;
-  float: right;
-  right: 10px;
-  top: 10px;
-  cursor: pointer;
-  width: 18px;
-  height: 18px;
-  text-align: center;
-  vertical-align: center;
-}
-
-#list-selector .close-button:hover {
-  color: #fff;
-  background-color: #ccc;
-  border-radius: 50%;
 }
 
 /* 
