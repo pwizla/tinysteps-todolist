@@ -275,7 +275,7 @@ ul {
   width: 220px;
 }
 
-#list-selector-close {
+#list-selector .close-button {
   position: relative;
   color: #ccc;
   float: right;
