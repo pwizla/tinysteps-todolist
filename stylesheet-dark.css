@@ -229,7 +229,7 @@ ul {
   right: 30px;
   text-align: right;
   font-size: 14px;
-  color: #999;
+  color: #eee;
 }
 
 .creditsline {
@@ -239,13 +239,13 @@ ul {
 
 #credits a {
   text-decoration: none;
-  color: #c00;
+  color: #f00;
   padding: 3px 3px 3px 3px;
 }
 
 #credits a:hover {
   color: #fff;
-  background-color: #c00;
+  background-color: #f00;
 }
 
 #list-selector {
@@ -295,8 +295,8 @@ ul {
 }
 
 #list-selector .close-button:hover {
-  color: #fff;
-  background-color: #ccc;
+  color: #191919;
+  background-color: #eee;
   border-radius: 50%;
 }
 
