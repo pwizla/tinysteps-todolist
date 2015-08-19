@@ -84,6 +84,26 @@ input[name=add] {
 }
 
 
+
+
+h1 {
+  font-size: 1.6em;
+  display: inline-block;
+}
+
+
+.todo-panel h1 {
+  color: #e00;
+}
+
+.done-panel h1 {
+  color: #ccc;
+}
+
+.settings-panel h1 {
+  color: #000;
+}
+
 .pw-header {
   position: absolute;
   display: block;
@@ -125,7 +145,7 @@ input[name=add] {
   height: 100px;
 }
 
-#settings-panel header h3 {
+#settings-panel header h1 {
   float: left;
   padding-left: 50px;
   padding-top: 40px;
