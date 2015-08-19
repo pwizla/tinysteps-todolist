@@ -80,7 +80,7 @@ input[name=add] {
   margin-right: auto;
 }
 
-.circle-inactive, .circle-active {
+.circle, .circle-active {
   float: left;
   margin-left: 3px;
   margin-right: 3px;
@@ -89,11 +89,11 @@ input[name=add] {
   border-radius: 50%;
 }
 
-.circle-inactive {
+.circle {
   background-color: #ccc;
   cursor: pointer;
 }
 
 .circle-active {
-  background-color: #e00;
+  background-color: #e00 !important;
 }
