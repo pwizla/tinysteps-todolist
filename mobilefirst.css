@@ -1,0 +1,40 @@
+body {
+  width: 90%;
+  margin: auto;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 2em;
+}
+
+h1 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: #e00;
+}
+
+#new-todo-input {
+  width: 90%;
+  border: none;
+  border-bottom: solid 1px #ccc;
+  font-size: 1.5em;
+  color: #ccc;
+}
+
+#new-todo-input:focus {
+  color: #000;
+}
+
+footer {
+  position: absolute;
+  width: 80%;
+  bottom: 3em;
+}
+
+.panel-switcher-circle {
+  float: right;
+  margin-left: 5px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
