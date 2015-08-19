@@ -16,7 +16,6 @@
 
 $(document).ready( function() {
 
-    $('#circle-add-panel').addClass('circle-active');
   
     var $list = localStorage.getItem('todolist');
     var $listdone = localStorage.getItem('donelist');
@@ -58,7 +57,7 @@ $(document).ready( function() {
   });
 
   //watches for the click event on div '#add'
-  $('input#add').click( function() { 
+  $('#add').click( function() { 
       addNewTask();
   });
 
@@ -400,40 +399,6 @@ $(document).ready( function() {
         console.log("hiding list-selector");
       }
       });
-
-    $('.circle').click( function() {
-      console.log("click registered on button");
-      $('.circle-active').removeClass('circle-active');
-      $(this).addClass('circle-active');
-    });
-
-    $('#circle-todo-panel').click( function() {
-      $('.add-panel').hide();
-      $('.todo-panel').show();
-      $('.done-panel').hide();
-      $('.settings-panel').hide();
-    });
-
-    $('#circle-add-panel').click( function() {
-      $('.add-panel').show();
-      $('.todo-panel').hide();
-      $('.done-panel').hide();
-      $('.settings-panel').hide();
-    });
-
-    $('#circle-done-panel').click( function() {
-      $('.add-panel').hide();
-      $('.todo-panel').hide();
-      $('.done-panel').show();
-      $('.settings-panel').hide();
-    });
-
-    $('#circle-settings-panel').click( function() {
-      $('.add-panel').hide();
-      $('.todo-panel').hide();
-      $('.done-panel').hide();
-      $('.settings-panel').show();
-    });
 
 
 });

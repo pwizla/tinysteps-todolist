@@ -14,7 +14,7 @@ body {
   margin: auto;
 }
 
-.new-task-div {
+.add-panel, .todo-panel, .done-panel, .settings-panel {
   position: absolute;
   width: 90%;
   height: 25%;
@@ -24,6 +24,10 @@ body {
   left: 0;
   right: 0;
   margin: auto;
+}
+
+.todo-panel, .done-panel, .settings-panel {
+  display: none;
 }
 
 .one-line-input {

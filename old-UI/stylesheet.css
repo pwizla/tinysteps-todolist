@@ -1,0 +1,473 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  padding-left: 10px;
+  text-decoration: none;
+}
+
+h1 {
+  font-family: Raleway, Helvetica, Arial, sans-serif;
+  font-weight: 900;
+  font-size: 36px;
+  color: #e00;
+}
+
+h3 {
+  display: inline-block;
+  width: 345px;
+  padding-top: 10px;
+  margin-top: 80px;
+  border-top: 6px solid #999999;
+}
+
+header > h1 {
+}
+
+header > span {
+  margin-left: 25px;
+  color: #aacccc;
+  font-size: 14px;
+}
+
+header > span a {
+  text-decoration: none;
+  color: #cc0000;
+  padding: 2px 5px 2px 5px;
+}
+
+header > span a:hover {
+  color: white;
+  background-color: #cc0000;
+}
+
+#todolist, #donelist {
+  float: left;
+  margin-right: 5em;
+}
+
+#todolist h3 {
+  color: #e00;
+  border-color: #e00;
+}
+
+#donelist h3 {
+  color: #999;
+  border-color: #eee;
+}
+
+.resizable {
+  resize: horizontal;
+}
+
+form {
+  display: inline-block;
+}
+
+#newTaskTextInput, #add, #delete, #alldone, #undo {
+  padding: 9px 12px 6px 12px;
+}
+
+#newTaskTextInput, #add {
+  font-size: 16px;
+}
+
+#newTaskTextInput {
+  width: 320px; 
+  border: 1px solid #665544;
+  color: #ccc;
+} 
+
+#newTaskTextInput:focus {
+  color: black;
+  border-color: #e00;
+}
+
+/* === STYLING THE BUTTON-LIKE DIVS === */
+
+#add, #delete, #alldone, #undo {
+  display: inline-block;
+  width: 70px;
+  margin: 0px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+#delete, #alldone, #undo {
+  font-size: 14px;
+  background-color: white;
+  border: 1px solid;
+}
+
+#add {
+  background-color: #e00;
+  color: white;
+  border: none;
+}
+
+#add:hover {
+  background-color: #c00;
+}
+
+#add:active {
+  background-color: #a00;
+}
+
+#alldone, #undo {
+  color: black;
+  border-color: black; 
+}
+
+#alldone:hover, #undo:hover {
+  color: white;
+  background-color: black;
+}
+
+#alldone:active, #undo:active {
+  color: white;
+  background-color: #999;
+}
+
+#delete {
+  color: #c00;
+  border-color: #c00;
+}
+
+#delete:hover {
+  color: white;
+  background-color: #c00;
+}
+
+#delete:active {
+  background-color: #a00;
+  color: white;
+}
+
+/* === STYLING THE LIST ITEMS === */
+
+.item {
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.itemdone {
+  color: #999;
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+.error-message {
+  padding-top: 20px;
+  color: #c00;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.list li, .listdone li {
+  margin-left: 24px;
+}
+
+ul {
+  width: 310px;
+}
+
+/*
+ ***** 
+ RIGHT PANEL 
+ *****
+ */
+
+.slidepanel {
+  box-shadow: -5px 0px 5px 0px #d1d1d1; /* position x, position y, blur, spread, color */
+  background-color: white;
+  display: none; 
+}
+
+#rightpanel {
+  position: fixed;
+  height: 100%;
+  width: 400px;
+  right: 0;
+  top: 0;
+  padding-top: 20px;
+}
+
+#rightpanel header {
+  position: fixed;
+  top: 0;
+  height: 100px;
+}
+
+#rightpanel header h3 {
+  float: left;
+  padding-left: 50px;
+  padding-top: 40px;
+  color: #c00;
+  border-top: none;
+  margin-top: 0;
+}
+
+#rightpanel-content {
+  position: relative;
+  top: 90px;
+  padding-left: 20px;
+  background-color: red;
+}
+
+.pw-option-group {
+  float: right;
+  margin: 5px 30px 5px 0px;
+}
+
+#credits {
+  position: absolute;
+  bottom: 80px;
+  right: 30px;
+  text-align: right;
+  font-size: 14px;
+  color: #999;
+}
+
+.creditsline {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+#credits a {
+  text-decoration: none;
+  color: #c00;
+  padding: 3px 3px 3px 3px;
+}
+
+#credits a:hover {
+  color: #fff;
+  background-color: #c00;
+}
+
+
+
+
+#list-selector {
+  display: none;
+  position: absolute;
+  float: left;
+  width: 345px;
+  height: 80px;
+  background-color: #fff;
+  margin: 30px 10px 0px 0px;
+}
+
+#list-selector h3 {
+  display: inline;
+  float: left;
+  font-size: 18px;
+  color: #000;
+  padding: 0px;
+  font-weight: normal;
+  border: none;
+  margin: 0;
+}
+
+#list-selection {
+  float: left;
+  display: inline;
+  margin: 10px 90px 0px 0px;
+  width: 220px;
+  font-size: 18px;
+  color: #e00;
+}
+
+/* 
+ * Stylized Checkbox 
+ *
+ * The following checkbox stylized part were taken from http://www.paulund.co.uk/style-checkboxes-with-css 
+ */
+
+  .checkboxStylized {
+    position: relative;
+    float: right;
+    width: 25px;
+}
+
+/* 
+ * Create the box for the checkbox 
+ */
+
+  .checkboxStylized label {
+    cursor: pointer;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 0;
+    left: 0;
+    background: #eeeeee;
+    border: 1px solid #ddd;
+}
+
+/*
+ * Display the tick inside the checkbox
+ */
+
+  .checkboxStylized label:after {
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 6px;
+    left: 7px;
+    border: 3px solid #c00;
+    border-top: none;
+    border-right: none;
+
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -transform: rotate(-45deg);
+}
+
+/**
+ * Create the hover event of the tick
+ */
+
+  .checkboxStylized label:hover::after {
+    opacity: 0.5;
+}
+
+/** 
+ * Create the checkbox state for the tick
+ */
+
+  .checkboxStylized input[type=checkbox]:checked + label:after {
+    opacity: 1;
+}
+
+/* 
+ * END OF STYLE FOR CHECKBOXES
+ */
+
+  /*
+   * Stylize options names
+   */
+
+  .option-name {
+    float: right;
+    padding: 5px 10px 5px 10px;
+}
+
+/*
+ * Hamburger icon for Settings
+ */
+
+.settings-button {
+    position: fixed;
+    top: 35px;
+    right: 20px;
+    width: 115px;
+    height: 30px;
+    background-color: #fff;
+}
+
+.settings-button:hover .settings-button-text {
+  color: #c00;
+}
+
+.settings-button:hover .settings-button-text:after {
+  content: 'Open';
+}
+
+.settings-button:hover .settings-button-text-active:after {
+  content: 'Close' !important;
+}
+
+.hamburger-menu, .hamburger-menu-active {
+  margin-top: 8px;
+  margin-left: 10px;
+  width:20px;
+  height:3px;
+  display: block;
+  float: left;
+  position:relative;
+}
+
+.hamburger-menu {
+  background-color:#000;
+}
+
+.hamburger-menu-active {
+  background-color:#c00;
+}
+
+.hamburger-menu-active:hover .settings-button-text:after {
+  content: 'Close' !important;
+}
+
+.hamburger-menu:after, .hamburger-menu:before, .hamburger-menu-active:after, .hamburger-menu-active:before {
+  content: '';
+  width: 100%;
+  height:3px;
+  position:absolute;
+}
+
+.hamburger-menu:after, .hamburger-menu:before {
+  background-color: #000;
+}
+
+.hamburger-menu-active:after, .hamburger-menu-active:before {
+  background-color: #c00;
+}
+
+.hamburger-menu:after, .hamburger-menu-active:after {
+  top:5px;
+}
+
+.hamburger-menu:before, .hamburger-menu-active:before {
+  top:10px;
+}
+
+.settings-button-text, .settings-button-text-active {
+  display: block;
+  float: left;
+  font-size: 16px;
+  padding: 8px 6px 6px 12px;
+  font-weight: bold;
+}
+
+.settings-button-text:after {
+  content: 'Settings';
+}
+
+.settings-button-text-active {
+  color: #c00;
+}
+
+/* Pseudo-elements and pseudo-classes are explained here: http://www.hongkiat.com/blog/pseudo-element-before-after/ */
+.settings-button-text-active:hover:after {
+  /* overrides the 'Open' content from .settings-button-text-active */
+  content: 'Close' !important; 
+}
+
+
+/*
+ *********************************************
+ * MEDIA QUERIES FOR A MOBILE FIRST APPROACH *
+ ********************************************/
+/*
+@media screen and (min-width: 88em) {
+
+body {
+}
+
+#todolist, #donelist {
+  width: 560px;
+  margin-right: 3em;
+}
+
+#alldone, #undo, #delete {
+  font-size: 1.1em;
+  width: 90px;
+}
+
+}
+*/

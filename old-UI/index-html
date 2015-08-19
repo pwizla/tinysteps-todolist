@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My todo list</title>
+  <link rel="shortcut icon" href="resources/favicon.ico"><link/>
+  <link href='http://fonts.googleapis.com/css?family=Raleway:900' rel='stylesheet' type='text/css'>
+
+
+  <!-- jQuery and jQuery UI -->
+  <script src="resources/jquery-2.1.4.min.js"></script>
+  <script src="resources/jquery-ui.min.js"></script>
+
+  <!-- loads the awesome jEditable plugin : not used for now
+  <script src="http://www.appelsiini.net/download/jquery.jeditable.mini.js"></script>
+  -->
+<!-- jEditable not used for now 
+  <script src="http://www.appelsiini.net/download/jquery.jeditable.mini.js"></script>
+-->
+
+  <!-- main custom css -->
+  <link id="theme" rel="stylesheet" type="text/css" href="stylesheet.css"></link>
+
+  <script src="script.js" type="text/javascript"></script> 
+
+</head>
+  
+<body>
+  <main class="cd-main-content">
+  <!-- header & span structure suggested by http://stackoverflow.com/a/13194762/5139147 -->
+  <header>
+    <h1>My Todo List</h1>
+    <!-- <span>by <a href="http://twitter.com/pwizla">pwizla</a></span> -->
+    <!-- <span><b><a target="_blank" href="https://github.com/pwizla/tinysteps-todolist/blob/gh-pages/README.md">README</a></b></span> -->
+    <div class="settings-button">
+      <div class="settings-button-icon">
+          <div class="hamburger-menu"></div>
+      </div> <!-- settings-button-icon -->
+      <div class="settings-button-text"></div>
+    </div> <!-- settings-button -->
+  </header>
+
+  <!-- NEW TASK FORM -->
+  <div class="form">
+    <form name="newTaskForm" method="POST"> 
+      <input type="text" value="enter new task here" onfocus="if(this.value == 'enter new task here') { this.value = ''; }" name="newTaskTextInput" id="newTaskTextInput"/>
+      <input type="submit" value="Add" id="add" onsubmit="addNewTask();">
+    </form> 
+  </div>
+
+
+  <div id="list-selector">
+    <h3>Current list:</h3>
+      <select name="current_list" id="list-selection"> 
+        <option value="main">main</option>
+        <option value="second">second</option>
+      </select>
+  </div> <!-- list-selector -->
+
+
+  <br/>
+  <div class="error-message"></div>
+
+  <div id="todolist" class="resizable">
+    <h3>To do:</h3>
+    <div id="alldone">Complete!</div>
+    <ul class="list"></ul>
+  </div> <!-- todolist -->
+
+  <div id="donelist" class="resizable">
+    <h3>Completed:</h3>
+    <div id="undo" >Undo All</div>
+    <div id="delete">Delete All</div>
+    <ul class="listdone"></ul>
+  </div> <!-- donelist -->
+  
+  </main>
+
+  <!-- Panel sliding from the right of the page and containing settings -->
+  <div id="rightpanel" class="slidepanel">
+    <header>
+      <div class="settings-button">
+        <div class="hamburger-menu"></div>
+        <div class="settings-button-text"></div>
+      </div> <!-- settings-button -->
+    </header>
+    
+    <div id="rightpanel-content">
+
+      <div class="pw-option-group">
+          <!-- The checkbox stylized part was taken from http://www.paulund.co.uk/style-checkboxes-with-css -->
+            <div class="checkboxStylized">
+              <input type="checkbox" checked id="show-done-checkbox" name="show-done-checkbox" />
+              <label for="show-done-checkbox"></label>
+            </div> <!-- checkboxStylized -->
+            <div class="option-name">Show Completed Tasks</div>
+      </div> <!-- show-done-option -->
+
+      <div class="pw-option-group">
+        <div class="checkboxStylized">
+          <input type="checkbox" checked id="show-tooltips-checkbox" name="show-tooltips-checkbox" />
+          <label for="show-tooltips-checkbox"></label>
+        </div>
+        <div class="option-name">Show Tooltips</div>
+      </div> <!-- show-tooltips-->
+
+      <div class="pw-option-group">
+            <div class="checkboxStylized">
+              <input type="checkbox" id="shiftclick-delete-checkbox" name="shiftclick-delete-checkbox" />
+              <label for="shiftclick-delete-checkbox"></label>
+            </div> <!-- checkboxStylized -->
+            <div class="option-name">Shift-Click deletes Completed Tasks</div>
+      </div> <!-- show-done-option -->
+
+      <div class="pw-option-group">
+            <div class="checkboxStylized">
+              <input type="checkbox" id="use-darktheme-checkbox" name="use-darktheme-checkbox" />
+              <label for="use-darktheme-checkbox"></label>
+            </div> <!-- checkboxStylized -->
+            <div class="option-name">Use Dark Theme</div>
+      </div> <!-- show-done-option -->
+
+      <div class="pw-option-group">
+            <div class="checkboxStylized">
+              <input type="checkbox" id="show-list-selector" name="show-list-selector" />
+              <label for="show-list-selector"></label>
+            </div> <!-- checkboxStylized -->
+            <div class="option-name">Show List Selector</div>
+      </div> <!-- show-list-selector -->
+
+      
+    </div> <!-- rightpanel-content -->
+    
+    <div id="credits">
+      <div class="creditsline">
+      created by <a href="https://twitter/com/pwizla" >Pierre Wizla</a>
+      </div> <!-- creditsline -->
+      <div class="creditsline">
+      v0.5 - <a href="https://github.com/pwizla/tinysteps-todolist">fork me on GitHub</a>
+      </div> <!-- creditsline -->
+    </div> <!-- credits -->
+
+  </div> <!-- rightpanel -->
+
+</body>
+</html>
