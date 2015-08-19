@@ -28,7 +28,7 @@
       <form>
         <label for="new-task-input">Add new task:</label>
         <div class="one-line-input">
-          <input type="text" value="buy some bread" name="new-task-input"/>
+          <input type="text" value="buy some bread" onfocus="if(this.value == 'buy some bread') { this.value = ''; }" name="new-task-input" id="new-task-input"/>
           <input type="submit" value="ok" name="add" id="add"/>
         </div> <!-- one-line-input -->
       </form>
@@ -59,8 +59,72 @@
     </div>
     <div class="circle" id="circle-settings-panel">
     </div>
-  </div> <!-- pw-footer -->
+  </div> <!-- pw-header -->
 
+  <div class="settings-panel">
+    <header>
+      <div class="settings-button">
+        <div class="hamburger-menu"></div>
+        <div class="settings-button-text"></div>
+      </div> <!-- settings-button -->
+    </header>
+    
+    <div id="settings-panel-content">
+
+      <div class="pw-option-group">
+          <!-- The checkbox stylized part was taken from http://www.paulund.co.uk/style-checkboxes-with-css -->
+            <div class="checkboxStylized">
+              <input type="checkbox" checked id="show-done-checkbox" name="show-done-checkbox" />
+              <label for="show-done-checkbox"></label>
+            </div> <!-- checkboxStylized -->
+            <div class="option-name">Show Completed Tasks</div>
+      </div> <!-- show-done-option -->
+
+      <div class="pw-option-group">
+        <div class="checkboxStylized">
+          <input type="checkbox" checked id="show-tooltips-checkbox" name="show-tooltips-checkbox" />
+          <label for="show-tooltips-checkbox"></label>
+        </div>
+        <div class="option-name">Show Tooltips</div>
+      </div> <!-- show-tooltips-->
+
+      <div class="pw-option-group">
+            <div class="checkboxStylized">
+              <input type="checkbox" id="shiftclick-delete-checkbox" name="shiftclick-delete-checkbox" />
+              <label for="shiftclick-delete-checkbox"></label>
+            </div> <!-- checkboxStylized -->
+            <div class="option-name">Shift-Click deletes Completed Tasks</div>
+      </div> <!-- show-done-option -->
+
+      <div class="pw-option-group">
+            <div class="checkboxStylized">
+              <input type="checkbox" id="use-darktheme-checkbox" name="use-darktheme-checkbox" />
+              <label for="use-darktheme-checkbox"></label>
+            </div> <!-- checkboxStylized -->
+            <div class="option-name">Use Dark Theme</div>
+      </div> <!-- show-done-option -->
+
+      <div class="pw-option-group">
+            <div class="checkboxStylized">
+              <input type="checkbox" id="show-list-selector" name="show-list-selector" />
+              <label for="show-list-selector"></label>
+            </div> <!-- checkboxStylized -->
+            <div class="option-name">Show List Selector</div>
+      </div> <!-- show-list-selector -->
+
+      
+    </div> <!-- rightpanel-content -->
+    
+    <div id="credits">
+      <div class="creditsline">
+      created by <a href="https://twitter/com/pwizla" >Pierre Wizla</a>
+      </div> <!-- creditsline -->
+      <div class="creditsline">
+      v0.5 - <a href="https://github.com/pwizla/tinysteps-todolist">fork me on GitHub</a>
+      </div> <!-- creditsline -->
+    </div> <!-- credits -->
+
+  </div> <!-- rightpanel -->
   </div> <!-- pw-page -->
 
 </body>
