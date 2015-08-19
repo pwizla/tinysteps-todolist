@@ -42,12 +42,12 @@ $(document).ready( function() {
     }
 
   // gives focus to input text box as soon document is ready
-  $('#newTaskTextInput').focus();
+  $('#new-task-input').focus();
 
   // Uncomment the following block to print helpful message(s) to the console (useful for DEBUG)
 /*
     console.log("DEBUT TEST DEBUG");
-    console.log("When page is first loaded, text input= " + $('input[name=newTaskTextInput]').val());
+    console.log("When page is first loaded, text input= " + $('input[name=new-task-input]').val());
 */
 
   /* will fix this bug:
@@ -97,7 +97,7 @@ $(document).ready( function() {
   
   /* === FUNCTION TO HANDLE WHAT HAPPENS WHEN YOU CLICK THE ADD "BUTTON" 
    Basically, when '#add' button is clicked, the function gets the text 
-   typed in the input text box whose name is '#newTaskTextInput' 
+   typed in the input text box whose name is '#new-task-input' 
    and appends a new "listItem" list entry (li) within the "todoList" div */
   
     function addNewTask () {
@@ -106,11 +106,11 @@ $(document).ready( function() {
 /*
        console.log();
        console.log("NOW ENTERING THE addNewTask FUNCTION");
-       console.log("input[name=newTaskTextInput] contains the following string '" + $('input[name=newTaskTextInput]').val() + "'");
+       console.log("input[name=new-task-input] contains the following string '" + $('input[name=new-task-input]').val() + "'");
 */
 
         //stores text from text input into the itemText variable
-        var itemText = $('input[name=newTaskTextInput]').val(); 
+        var itemText = $('input[name=new-task-input]').val(); 
         
         // Uncomment the following block to print helpful messages to the console (useful for DEBUG)
 /*
@@ -135,13 +135,13 @@ $(document).ready( function() {
           $('.error-message').append('Please enter a new task before clicking the add button!<br/>'); 
         } 
 
-        else { // user has actually typed text in the newTaskTextInput field; 
+        else { // user has actually typed text in the new-task-input field; 
 
             // Uncomment the following block to print helpful message to the console (useful for DEBUG)
 /*
             console.log();
             console.log("User has entered text in input box");
-            console.log("input[name=newTaskTextInput] contains the following string '" + $('input[name=newTaskTextInput]').val() + "'");
+            console.log("input[name=new-task-input] contains the following string '" + $('input[name=new-task-input]').val() + "'");
             console.log("Text entered is stored in itemText variable");
             console.log("itemText now contains: ' " + itemText +  "'");
 */
@@ -159,12 +159,12 @@ $(document).ready( function() {
  //          console.log("The .error-message class content has been emptied");
 
           // clears the input text box; 
-          $('input[name=newTaskTextInput]').val(''); 
+          $('input[name=new-task-input]').val(''); 
 
           // Uncomment the following block to print helpful message to the console (useful for DEBUG)
 /*
              console.log("We're at end of the addNewTask function, and itemText variable = " + itemText);
-             console.log("And input[name=newTaskTextInput] contains '" + $('input[name=newTaskTextInput]').val() + "'");
+             console.log("And input[name=new-task-input] contains '" + $('input[name=new-task-input]').val() + "'");
 */
 
         };
