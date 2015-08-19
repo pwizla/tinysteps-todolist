@@ -1,0 +1,91 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.5em;
+}
+
+.pw-page {
+  position: absolute;
+  min-height: 400px;
+  min-width: 600px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.new-task-div {
+  position: absolute;
+  width: 90%;
+  height: 25%;
+  min-height: 300px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.one-line-input {
+  display: inline-block;
+  width: 100%;
+}
+
+input {
+  font-size: 1.6em;
+}
+
+label {
+  display: block;
+  font-size: 1.6em;
+  color: #e00;
+  font-weight: bold;
+  font-size: 2em;
+}
+  
+input[name=new-task-input], input[name=add] {
+  display: inline-block;
+  float: left;
+  margin-top: .5em;
+}
+
+input[name=new-task-input] {
+  width: 80%;
+  border: none;
+  border-bottom: solid 1px #ccc;
+  color: #ccc;
+}
+
+input[name=new-task-input]:focus {
+  color: #000;
+}
+
+input[name=add] {
+  border-radius: 50%;
+  border: none;
+  padding: .2em;
+  color: #fff;
+  background-color: #e00;
+}
+
+
+.pw-footer {
+  position: absolute;
+  display: block;
+  bottom: 10%;
+  width: 82px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pw-panel-switcher-circle {
+  float: right;
+  margin-left: 3px;
+  margin-right: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
