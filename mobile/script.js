@@ -16,6 +16,7 @@
 
 $(document).ready( function() {
 
+    $('#circle-add-panel').addClass('circle-active');
   
     var $list = localStorage.getItem('todolist');
     var $listdone = localStorage.getItem('donelist');
@@ -400,6 +401,11 @@ $(document).ready( function() {
       }
       });
 
+    $('.circle').click( function() {
+      console.log("click registered on button");
+      $('.circle-active').removeClass('circle-active');
+      $(this).addClass('circle-active');
+    });
 
 });
 
