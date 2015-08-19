@@ -24,7 +24,7 @@
   <div class="pw-page">
 
   <div class="panel">
-    <div class="new-task-div">
+    <div class="add-panel">
       <form>
         <label for="new-task-input">Add new task:</label>
         <div class="one-line-input">
@@ -33,8 +33,23 @@
         </div> <!-- one-line-input -->
       </form>
     </div> <!-- new-task-div -->
-  </div> <!-- panel -->
 
+  <div class="todo-panel">
+     <h3>To do:</h3>
+     <div id="alldone">Complete!</div>
+     <ul class="list"></ul>
+  </div> <!-- todo-panel -->
+
+  <div class="done-panel">
+     <h3>Completed:</h3>
+     <div id="undo" >Undo All</div>
+     <div id="delete">Delete All</div>
+     <ul class="listdone"></ul>
+  </div> <!-- done-panel -->
+
+
+  </div> <!-- panel -->
+  
   <div class="pw-footer">
     <div class="circle" id="circle-add-panel">
     </div>
@@ -46,12 +61,6 @@
     </div>
   </div> <!-- pw-footer -->
 
-  <div class="list">
-  </div> <!-- list -->
-
-  <div class="listdone">
-  </div> <!-- listdone -->
-  
   </div> <!-- pw-page -->
 
 </body>
