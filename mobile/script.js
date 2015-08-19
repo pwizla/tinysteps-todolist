@@ -58,7 +58,7 @@ $(document).ready( function() {
   });
 
   //watches for the click event on div '#add'
-  $('#add').click( function() { 
+  $('input#add').click( function() { 
       addNewTask();
   });
 
@@ -406,6 +406,35 @@ $(document).ready( function() {
       $('.circle-active').removeClass('circle-active');
       $(this).addClass('circle-active');
     });
+
+    $('#circle-todo-panel').click( function() {
+      $('.add-panel').hide();
+      $('.todo-panel').show();
+      $('.done-panel').hide();
+      $('.settings-panel').hide();
+    });
+
+    $('#circle-add-panel').click( function() {
+      $('.add-panel').show();
+      $('.todo-panel').hide();
+      $('.done-panel').hide();
+      $('.settings-panel').hide();
+    });
+
+    $('#circle-done-panel').click( function() {
+      $('.add-panel').hide();
+      $('.todo-panel').hide();
+      $('.done-panel').show();
+      $('.settings-panel').hide();
+    });
+
+    $('#circle-settings-panel').click( function() {
+      $('.add-panel').hide();
+      $('.todo-panel').hide();
+      $('.done-panel').hide();
+      $('.settings-panel').show();
+    });
+
 
 });
 
