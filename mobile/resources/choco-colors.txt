@@ -1,0 +1,3 @@
+  border-color: chocolate; /* chocolate = #d2691e */
+  background-color: #665544;
+  background-color: #be561c;
