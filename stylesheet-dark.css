@@ -263,6 +263,7 @@ h1 {
     padding-top: 5px;
 }
 
+
 #credits {
   margin-top: 8em;
   left: 0;
@@ -272,7 +273,7 @@ h1 {
   width: 195px;
   text-align: center;
   font-size: 14px;
-  color: #999;
+  color: #777;
 }
 
 .creditsline {
@@ -284,11 +285,10 @@ h1 {
 #credits a {
   text-decoration: none;
   color: #c00;
-  padding: 3px 3px 3px 3px;
+  padding: 5px 3px 2px 3px;
 }
 
 #credits a:hover {
   color: #fff;
   background-color: #c00;
 }
-
