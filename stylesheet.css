@@ -119,6 +119,10 @@ h1 {
   margin-left: -15px;
 }
 
+.item:hover {
+  color: #e00;
+}
+
 
 .itemdone {
   color: #777;
