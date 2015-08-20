@@ -93,6 +93,7 @@ input[name=add] {
 h1 {
   font-size: 2em;
   display: inline-block;
+  font-weight: bold;
 }
 
 
