@@ -130,6 +130,14 @@ h1 {
   cursor: pointer;
 }
 
+
+
+#alldone, #undo, #delete {
+  display: none;
+}
+
+
+
 .pw-header {
   position: absolute;
   display: block;
