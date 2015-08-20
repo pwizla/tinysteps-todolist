@@ -419,6 +419,7 @@ $(document).ready( function() {
       $('.todo-panel').hide();
       $('.done-panel').hide();
       $('.settings-panel').hide();
+      $('#new-task-input').focus();
     });
 
     $('#circle-done-panel').click( function() {
