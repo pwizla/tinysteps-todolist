@@ -31,6 +31,7 @@ body {
 
 .settings-panel {
   height: 50%;
+  width: 70%; 
 }
 
 .todo-panel, .done-panel {
@@ -102,6 +103,21 @@ h1 {
 
 .settings-panel h1 {
   color: #000;
+  margin-left: 25px;
+}
+
+
+
+.item {
+  margin-bottom: .3em;
+  cursor: pointer;
+}
+
+
+.itemdone {
+  color: #ccc;
+  text-decoration: line-through;
+  cursor: pointer;
 }
 
 .pw-header {
@@ -239,14 +255,17 @@ h1 {
    */
 
   .option-name {
-    margin-left: 1.5em;
-    padding-top: .15em;
+    margin-left: 35px;
+    padding-top: 5px;
 }
 
 #credits {
-  position: absolute;
-  bottom: 0;
-  width: 200px;
+  margin-top: 8em;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 165px;
   text-align: center;
   font-size: 14px;
   color: #999;
@@ -255,6 +274,7 @@ h1 {
 .creditsline {
   margin-top: 5px;
   margin-bottom: 5px;
+  padding-left: 5px;
 }
 
 #credits a {
