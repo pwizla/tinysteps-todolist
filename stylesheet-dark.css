@@ -9,7 +9,7 @@ body {
 .pw-page {
   position: absolute;
   min-height: 400px;
-  min-width: 600px;
+  min-width: 640px;
   left: 0;
   right: 0;
   top: 0;
@@ -19,7 +19,6 @@ body {
 
 .add-panel, .todo-panel, .done-panel, .settings-panel {
   position: absolute;
-  width: 90%;
   min-height: 300px;
   top: 0;
   bottom: 0;
@@ -30,15 +29,17 @@ body {
 
 .add-panel {
   height: 25%;
+  width: 90%;
 }
 
 .settings-panel {
   height: 50%;
-  width: 70%; 
+  width: 65%; 
 }
 
 .todo-panel, .done-panel {
   height: 85%;
+  width: 90%;
 }
 
 .todo-panel, .done-panel, .settings-panel {
@@ -68,7 +69,7 @@ input[name=new-task-input], input[name=add] {
 }
 
 input[name=new-task-input] {
-  width: 80%;
+  width: 87%;
   border: none;
   border-bottom: solid 1px #ccc;
   background-color: #191919;
@@ -96,6 +97,10 @@ h1 {
   font-weight: bold;
 }
 
+
+.todo-panel h1, .done-panel h1 {
+  margin-top: 1em;
+}
 
 .todo-panel h1 {
   color: #f00;
@@ -272,7 +277,7 @@ h1 {
   margin-right: auto;
   width: 195px;
   text-align: center;
-  font-size: 14px;
+  font-size: .7em;
   color: #777;
 }
 
