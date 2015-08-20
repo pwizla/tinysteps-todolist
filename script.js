@@ -11,6 +11,11 @@
     var undoTooltip = "Click to move all tasks back to the To do list";
     var deleteTooltip = "Click to DELETE all completed tasks";
 
+    var circleAddPanelTooltip = "Switch to the 'Add New Task' panel";
+    var circleTodoPanelTooltip = "Switch to the 'Todo list' panel";
+    var circleDonePanelTooltip = "Switch to the 'Completed list' panel";
+    var circleSettingsPanelTooltip = "Switch to the 'Settings' panel";
+
     var shiftClickDeletesCompletedItem = false;
     var showListSelector = false;
 
@@ -77,12 +82,20 @@ $(document).ready( function() {
       alldoneTooltip = "Click to mark all tasks as completed";
       undoTooltip = "Click to move all tasks back to the To do list";
       deleteTooltip = "Click to DELETE all completed tasks";
+      circleAddPanelTooltip = "Switch to the 'Add New Task' panel";
+      circleTodoPanelTooltip = "Switch to the 'Todo list' panel";
+      circleDonePanelTooltip = "Switch to the 'Completed list' panel";
+      circleSettingsPanelTooltip = "Switch to the 'Settings' panel";
     } else {
       itemTooltip = "";
       itemdoneTooltip = "";
       alldoneTooltip = "";
       undoTooltip = "";
       deleteTooltip = "";  
+      circleAddPanelTooltip = "";
+      circleTodoPanelTooltip = "";
+      circleDonePanelTooltip = "";
+      circleSettingsPanelTooltip = "";
     }
 
     $('.item').prop('title', itemTooltip);
@@ -90,7 +103,10 @@ $(document).ready( function() {
     $('#alldone').prop('title', alldoneTooltip);
     $('#undo').prop('title', undoTooltip);
     $('#delete').prop('title', deleteTooltip);
-
+    $('#circle-add-panel').prop('title', circleAddPanelTooltip);
+    $('#circle-todo-panel').prop('title', circleTodoPanelTooltip);
+    $('#circle-done-panel').prop('title', circleDonePanelTooltip);
+    $('#circle-settings-panel').prop('title', circleSettingsPanelTooltip);
   };    
 
 
