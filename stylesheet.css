@@ -29,14 +29,14 @@ body {
   width: 90%;
 }
 
-.settings-panel {
-  height: 50%;
-  width: 65%; 
-}
-
 .todo-panel, .done-panel {
   height: 85%;
   width: 90%;
+}
+
+.settings-panel {
+  height: 50%;
+  width: 65%; 
 }
 
 .todo-panel, .done-panel, .settings-panel {
