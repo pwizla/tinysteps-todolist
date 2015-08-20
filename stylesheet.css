@@ -116,6 +116,7 @@ h1 {
 .item {
   margin-bottom: .3em;
   cursor: pointer;
+  margin-left: -15px;
 }
 
 
