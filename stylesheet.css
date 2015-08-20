@@ -53,7 +53,6 @@ input {
 
 label {
   display: block;
-  font-size: 1.6em;
   color: #e00;
   font-weight: bold;
   font-size: 2em;
@@ -88,7 +87,7 @@ input[name=add] {
 
 
 h1 {
-  font-size: 1.6em;
+  font-size: 2em;
   display: inline-block;
 }
 
