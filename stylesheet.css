@@ -36,7 +36,7 @@ body {
 
 .settings-panel {
   height: 50%;
-  width: 65%; 
+  width: 70%; 
 }
 
 .todo-panel, .done-panel, .settings-panel {
@@ -284,7 +284,7 @@ h1 {
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  width: 195px;
+  width: 250px;
   text-align: center;
   font-size: .7em;
   color: #777;
