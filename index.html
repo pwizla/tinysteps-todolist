@@ -47,19 +47,6 @@
   </div> <!-- done-panel -->
 
 
-  </div> <!-- panel -->
-  
-  <div class="pw-header">
-    <div class="circle" id="circle-add-panel">
-    </div>
-    <div class="circle" id="circle-todo-panel">
-    </div>
-    <div class="circle" id="circle-done-panel">
-    </div>
-    <div class="circle" id="circle-settings-panel">
-    </div>
-  </div> <!-- pw-header -->
-
   <div class="settings-panel">
 
     <h1>Settings</h1>
@@ -126,6 +113,33 @@
     </div> <!-- credits -->
 
   </div> <!-- rightpanel -->
+  
+
+  <div class="lists-panel">
+    <form onsubmit="storeListName();">
+      <label for="current_list_name">List name:</label>
+      <input type="text" name="current_list_name">
+      <input type="submit" value="OK">
+    </form>
+
+    <select id="lists_list"></select>
+  </div> <!-- lists-panel -->
+
+  </div> <!-- panel -->
+  
+  <div class="pw-header">
+    <div class="circle" id="circle-add-panel">
+    </div>
+    <div class="circle" id="circle-todo-panel">
+    </div>
+    <div class="circle" id="circle-done-panel">
+    </div>
+    <div class="circle" id="circle-settings-panel">
+    </div>
+    <div class="circle" id="circle-lists-panel">
+    </div>
+  </div> <!-- pw-header -->
+
   </div> <!-- pw-page -->
 
 </body>
