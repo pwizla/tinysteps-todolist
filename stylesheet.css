@@ -14,7 +14,7 @@ body {
   margin: auto;
 }
 
-.add-panel, .todo-panel, .done-panel, .settings-panel {
+.add-panel, .todo-panel, .done-panel, .settings-panel, .lists-panel {
   position: absolute;
   min-height: 300px;
   top: 0;
@@ -39,7 +39,7 @@ body {
   width: 70%; 
 }
 
-.todo-panel, .done-panel, .settings-panel {
+.todo-panel, .done-panel, .settings-panel, .lists-panel {
   display: none;
 }
 
@@ -143,7 +143,7 @@ h1 {
   position: absolute;
   display: block;
   top: 5%;
-  width: 108px;
+  width: 134px;
   left: 0;
   right: 0;
   margin-left: auto;
