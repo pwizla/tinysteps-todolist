@@ -19,6 +19,67 @@
     var shiftClickDeletesCompletedItem = false;
     var showListSelector = false;
 
+
+      var currentListName = "";
+
+      if (localStorage.getItem('list_names') === null) {
+          console.log('list_names is empty, initializing it');
+          var listsNames = [];
+          console.log('listsNames is now defined as: ', listsNames);
+      } else {
+          console.log('retrieving list_names from local storage');
+          var listsNames = JSON.parse(localStorage.getItem('list_names'));
+          console.log('listsNames is: ', listsNames);
+      }
+
+      function storeListName() {
+          console.log('listsNames is: ', listsNames);
+          console.log('listsNames length = ', listsNames.length);
+          
+          currentListName = $('input[name=current_list_name]').val();
+          console.log('The latest list name typed is: ', currentListName);
+          
+          if (currentListName === "") {
+              // do nothing
+              console.log("Nothing typed, nothing to add!");
+          } else {
+              if (listsNames.length === 0) {
+                  listsNames[0] = currentListName;
+              } else {
+                  listsNames.push(currentListName);
+              }
+
+              console.log('listsNames is now:', listsNames);
+              localStorage.setItem("list_names", JSON.stringify(listsNames));
+
+              updateLists();
+              $('input[name=current_list_name]').val("");
+          };
+
+              return false;
+      };
+
+      function updateLists() {
+          var sel = document.getElementById('lists_list');
+          var opt = document.createElement('option');
+          
+          opt.innerHTML = currentListName;
+          opt.value = currentListName;;
+          sel.appendChild(opt);
+      };
+
+      function displayLists() {
+          var selec = document.getElementById('lists_list');
+
+          for (i = 0; i < listsNames.length; i++) {
+              var opt = document.createElement('option');
+              opt.innerHTML = listsNames[i];
+              opt.value = listsNames[i];
+              selec.appendChild(opt);
+          }
+      };
+
+
 $(document).ready( function() {
 
     $('#circle-add-panel').addClass('circle-active');
@@ -428,6 +489,7 @@ $(document).ready( function() {
       $('.todo-panel').show();
       $('.done-panel').hide();
       $('.settings-panel').hide();
+      $('.lists-panel').hide();
     });
 
     $('#circle-add-panel').click( function() {
@@ -435,6 +497,7 @@ $(document).ready( function() {
       $('.todo-panel').hide();
       $('.done-panel').hide();
       $('.settings-panel').hide();
+      $('.lists-panel').hide();
       $('#new-task-input').focus();
     });
 
@@ -443,6 +506,7 @@ $(document).ready( function() {
       $('.todo-panel').hide();
       $('.done-panel').show();
       $('.settings-panel').hide();
+      $('.lists-panel').hide();
     });
 
     $('#circle-settings-panel').click( function() {
@@ -450,8 +514,28 @@ $(document).ready( function() {
       $('.todo-panel').hide();
       $('.done-panel').hide();
       $('.settings-panel').show();
+      $('.lists-panel').hide();
     });
 
+    $('#circle-lists-panel').click( function() {
+      $('.add-panel').hide();
+      $('.todo-panel').hide();
+      $('.done-panel').hide();
+      $('.settings-panel').hide();
+      $('.lists-panel').show();
+    });
+
+
+
+  $(document).ready( function() {
+
+      $('form').on('submit', function(event) {
+          event.preventDefault();
+      });
+
+      displayLists();
+
+  });
 
 });
 
